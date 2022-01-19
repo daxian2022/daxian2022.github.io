@@ -1,0 +1,668 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hexo" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hexo" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Hexo" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2022/01/19/daxian%201.2/">
+
+
+
+  <title>
+第二天：计算机网络 |
+Yume Shoka = Hexo</title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">第二天：计算机网络
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-01-19 17:35:23">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-01-19T17:35:23+08:00">2022-01-19</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/19/daxian%201.2/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="John Doe">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="一-osi七层参考模型"><a class="markdownIt-Anchor" href="#一-osi七层参考模型">#</a> 一： OSI 七层参考模型</h1>
+<p>计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。</p>
+<p><strong>》》》计算机网络的分类《《《</strong></p>
+<table>
+<thead>
+<tr>
+<th>依照</th>
+<th>分类类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>地理范围</td>
+<td>局域网 (LAN)/ 城域网 (MAN)/ 广域网 (WAN)</td>
+</tr>
+<tr>
+<td>交换方式</td>
+<td>线路交换网络 / 报文交换网络 / 分组交换网络</td>
+</tr>
+<tr>
+<td>拓扑结构</td>
+<td>树形网络 / 总线型网络 / 环形网络 / 网状网络</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>局域网</strong>：是指范围在几百米到十几公里内办公楼群或校园内的计算机相互连接所构成的计算机网络。计算机局域网被广泛应用于连接校园、工厂以及机关的个人计算机或工作站，以利于个人计算机或工作站之间共享资源（如打印机）和数据通信。</p>
+</li>
+<li>
+<p><strong>城域网</strong>：所采用的技术基本上与局域网相类似，只是规模上要大一些。城域网既可以覆盖相距不远的几栋办公楼，也可以覆盖一个城市；既可以是私人网，也可以是公用网。</p>
+</li>
+<li>
+<p><strong>广域网</strong>：通常跨接很大的物理范围，如一个国家。</p>
+</li>
+</ul>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rqVVs.png" alt="7rqVVs.png"></p>
+<p><strong>》〉》通信要素《〈《</strong></p>
+<p>在网络上只要利用 IP 地址就可以找到目标主机，因此要攻击某个网络主机就要应该先确定该目标主机的域名或 IP 地址。</p>
+<p>阐述：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">所谓的ip地址就是一种主机编址方式，给每个连接在Intelnet上的主机分配一个32bit的地址，也称为网际协议地址。</span><br><span class="line">按照TCP/IP（Transport Control Protocol/Intelnet Protocol，传输控制协议）协议簇的规定，IP地址用二进制来表示，每个IP地址长32bit，换算成字节就是<span class="number">4</span>字节（Byte）。例如，一个采用二进制形式的ip地址是“000010100000000000000000001”，这么长的地址处理起来很费劲，为了方便使用，IP地址经常被写成十进制的形式，中间使用<span class="string">&quot;.&quot;</span>分割不同的字节，即用XXX.XXX.XXX.XXX的形式来表现，每组XXX代表小于等于<span class="number">255</span>的十进制数，例如<span class="number">192.168</span><span class="number">.38</span><span class="number">.6</span>。IP地址的这种表示方法称为“点分十进制表示法”，这显然比二进制的<span class="number">1</span>和<span class="number">0</span>容易记忆多了。</span><br></pre></td></tr></table></figure>
+<p>一个完整的 IP 地址信息应该包括：IP 地址 / 子网掩码 / 默认网关 / 和 DNS… 只有四个协同工作时，用户才可以访问 Internet 并被 Internet 的计算机所访问…</p>
+<p>（采用静态 IP 地址接入 Internet 时候，ISP 应当为用户提供全部 IP 地址信息）</p>
+<ul>
+<li>IP 地址：企业网络使用的合法 IP 地址，由提供 Internet 接入的服务商（ISP）分配公网地址，公网地址可以由网络管理员自由分配。但网络内部的私有 IP 地址不能相同，否则会发生 IP 地址冲突，导致网络连接失败。一般情况，IP 地址可以分为 5 大类别：A 类 / B 类 / C 类 / D 类及 E 类。</li>
+</ul>
+<p><strong>重点</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">A类地址以<span class="number">0</span>开头，第一个字节作为网络号，地址范围为：<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>~<span class="number">127.255</span><span class="number">.255</span><span class="number">.255</span>；  </span><br><span class="line">B类地址以<span class="number">10</span>开头，前两个字节作为网络号，地址范围是：<span class="number">128.0</span><span class="number">.0</span><span class="number">.0</span>~<span class="number">191.255</span><span class="number">.255</span><span class="number">.255</span>; </span><br><span class="line">C类地址以<span class="number">110</span>开头，前三个字节作为网络号，地址范围是：<span class="number">192.0</span><span class="number">.0</span><span class="number">.0</span>~<span class="number">223.255</span><span class="number">.255</span><span class="number">.255</span>； </span><br><span class="line">D类地址以<span class="number">1110</span>开头，地址范围是<span class="number">224.0</span><span class="number">.0</span><span class="number">.0</span>~<span class="number">239.255</span><span class="number">.255</span><span class="number">.255</span>，D类地址作为组播地址（一对多的通信）； </span><br><span class="line">E类地址以<span class="number">1111</span>开头，地址范围是<span class="number">240.0</span><span class="number">.0</span><span class="number">.0</span>~<span class="number">255.255</span><span class="number">.255</span><span class="number">.255</span>，E类地址为保留地址，供以后使用。 </span><br><span class="line">注：只有A,B,C有网络号和主机号之分，D类地址和E类地址没有划分网络号和主机号。</span><br><span class="line"><span class="number">255.255</span><span class="number">.255</span><span class="number">.255</span> </span><br><span class="line">该IP地址指的是受限的广播地址。受限广播地址与一般广播地址（直接广播地址）的区别在于，受限广播地址只能用于本地网络，路由器不会转发以受限广播地址为目的地址的分组；一般广播地址既可在本地广播，也可跨网段广播。		</span><br><span class="line">例如：主机<span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span>/<span class="number">30</span>上的直接广播数据包后，另外一个网段<span class="number">192.168</span><span class="number">.1</span><span class="number">.5</span>/<span class="number">30</span>也能收到该数据报；若发送受限广播数据报，则不能收到。 </span><br><span class="line">注：一般的广播地址（直接广播地址）能够通过某些路由器（当然不是所有的路由器），而受限的广播地址不能通过路由器。 </span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">8</span>    </span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>~<span class="number">127.255</span><span class="number">.255</span><span class="number">.255</span> 被用作回环地址，回环地址表示本机的地址，常用于对本机的测试，用的最多的是<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>。 </span><br></pre></td></tr></table></figure>
+<p><strong>重点</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A、B、C类私有地址 私有地址(private address)也叫专用地址，它们不会在全球使用，只具有本地意义。</span><br><span class="line">A类私有地址：<span class="number">10.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">8</span>，范围是：<span class="number">10.0</span><span class="number">.0</span><span class="number">.0</span>~<span class="number">10.255</span><span class="number">.255</span><span class="number">.255</span> </span><br><span class="line">B类私有地址：<span class="number">172.16</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">16</span>，范围是：<span class="number">172.16</span><span class="number">.0</span><span class="number">.0</span>~<span class="number">172.31</span><span class="number">.255</span><span class="number">.255</span> </span><br><span class="line">C类私有地址：<span class="number">192.168</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">24</span>，范围是：<span class="number">192.168</span><span class="number">.0</span><span class="number">.0</span>~<span class="number">192.168</span><span class="number">.255</span><span class="number">.255</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>子网掩码：子网掩码是于 IP 地址结合使用的一种技术，其主要作用有两个：</li>
+</ul>
+<p>​    \1. 用于确定地址中的网络号和主机号</p>
+<p>​    2. 用于将一个大的 IP 网络划分为若干个小自网络（划分子网）</p>
+<p>什么是子网掩码？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">子网掩码是标志两个IP地址是否同属于一个子网的，也是<span class="number">32</span>位二进制地址，其每一个为<span class="number">1</span>代表该位是网络位，为<span class="number">0</span>代表主机位。它和IP地址一样也是使用点式十进制来表示的。如果两个IP地址在子网掩码的按位与的计算下所得结果相同，即表明它们共属于同一子网中。</span><br><span class="line">A类地址来说，默认的子网掩码是<span class="number">255.0</span><span class="number">.0</span><span class="number">.0</span>； 对于B类地址来说默认的子网掩码是<span class="number">255.255</span><span class="number">.0</span><span class="number">.0</span>； 对于C类地址来说默认的子网掩码是<span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>默认网关：当一台主机找不到可用的网关时，就把数据包发送给指定的默认网关，由这个网管来处理数据包。</li>
+</ul>
+<p>（从一个网络向另一个网络发送消息，也必须经过一道 “关口” 这道关口就是网关）</p>
+<ul>
+<li>DNS 地址：DNS 服务用于将用户的域名请求转换为 IP 地址。如果企业网络没有提供 DNS 服务，则 DNS 服务器的 IP 地址应当是 ISP 的 DNS 服务器。</li>
+</ul>
+<p>【附件】全国各省市的 DNS 服务器 IP 地址。见附录</p>
+<p><strong>》》》OSI 七层参考模型《《《</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">有了计算机等设备，也就得考虑如何连接起来他们，这就是他们之间该如何通信的问题。对计算机来说，就是一个硬件设备，如何让计算机与计算机连接起来，必需需要软件的支撑。那么支持计算机通讯的软件是什么呢？就是计算机网络参考模型。这个计算机网络参考模型就是计算机网络软件。最经典的当然是国际化标准的OSI（Open System InterConnect 开放式系统互联）参考模型。它是通过一个机器上的一个应用进程与另一个机器上的进程进行信息交互。有了计算机等设备，也就得考虑如何连接起来他们，这就是他们之间该如何通信的问题。对计算机来说，就是一个硬件设备，如何让计算机与计算机连接起来，必需需要软件的支撑。那么支持计算机通讯的软件是什么呢？就是计算机网络参考模型。这个计算机网络参考模型就是计算机网络软件。最经典的当然是国际化标准的OSI（Open System InterConnect 开放式系统互联）参考模型。它是通过一个机器上的一个应用进程与另一个机器上的进程进行信息交互。</span><br></pre></td></tr></table></figure>
+<p>OSI 七层模型概念：</p>
+<p>1：OSI (open system Interconnect), 即开放式系统互联。一般叫 OSI 参考模型，是 ISO (国际标准化组织) 组织在 1985 年研究的网络互联模型。</p>
+<p>2：ISO 为了更好的使网络应用更为普及，推出了 OSI 参考模型。其含义就是推荐所有公司使用这个规范来控制网络。这样所有公司都有相同的规范，就能产生互联。</p>
+<p>3：OSI 定义了网络互联的七层框架（物理层、数据链层、网络层、传输层、会话层、表示层、应用层），即 ISO 开放互连系统参考模型。</p>
+<p>4：每一层实现各自的功能和协议，并完成与相邻层的接口通信。OSI 的服务定义详细说明了各层所提供的服务。某一层的服务就是该层及其下各层的一种功能，它同通过接口提供更高一层。各层所提供的服务与这些服务是怎末实现无关。</p>
+<p><strong>重点</strong></p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rqaRK.png" alt="7rqaRK.png"></p>
+<p><strong>》》》OSI 七层作用介绍《《《</strong></p>
+<p>1：应用层</p>
+<p>应用层是 OSI 参考模型的最高层，是用户与网络的接口。该层通过应用程序来完成网络用户的应用需求，如文件传输、收发电子邮件等。</p>
+<p>【提供与用户的接口，最终呈现给用户】</p>
+<p>2：表示层</p>
+<p>表示层处理流经结点的数据编码的表示方式问题，以保证一个系统应用层发出的信息可被另一系统的应用层读出。如果必要，该层可提供一种标准表示形式，用于将计算机内部的多种数据表示格式转换成网络通信中采用的标准表示形式。数据压缩和加密也是表示层可提供的转换功能之一。</p>
+<p>【数据的表示 / 安全 / 压缩】</p>
+<p>3：会话层</p>
+<p>会话层主要功能是管理和协调不同主机上各种进程之间的通信（会话），即负责建立、管理和终止应用程序之间的会话。会话层得名的原因是它很类似于两个实体间的会话概念。例如，一个交互的用户会话以登录到计算机开始，以注销结束。</p>
+<p>【建立用户之间的会话关系】</p>
+<p>4：传输层</p>
+<p>传输层的作用是为上层协议提供端到端的可靠的、透明的数据传输服务，包括处理差错控制和流量控制等问题。该层向高层屏蔽了下层数据通信的细节，使高层用户看到的只是在两个传输实体间的一条主机到主机的、可由用户控制和设定的、可靠的数据通路。</p>
+<p>传输层传送的协议数据单元称为段（data segment）或报文（Message）。</p>
+<p>【定义传输数据的协议端口号以及流控和差错校验】</p>
+<p>5：网络层：</p>
+<p>网络层是为其上层传输层提供服务，传送的协议数据单元称为数据包 (Packet) 或分组。该层的主要作用是解决如何使数据包通过各结点传送的问题，即通过路径选择算法（路由）将数据包送到目的地。另外，为避免通信子网中出现过多的数据包而造成的网络阻塞，需要对流入的数据包数量进行控制（拥塞控制）。当数据包要跨越多个通信子网才能到达目的地时，还要解决网际互连的问题。</p>
+<p>类比：网络层相当于邮局中的信件分拣人员。</p>
+<p>网络层的作用：</p>
+<ul>
+<li>
+<p>路由选路</p>
+</li>
+<li>
+<p>拥塞控制、差错检测与恢复</p>
+</li>
+<li>
+<p>网络互联</p>
+</li>
+</ul>
+<p>【进行逻辑地址寻址，实现不同网络之间的路径选择】</p>
+<p>6：数据链层</p>
+<p>数据链路层是为其上层网络层提供服务，解决两个相邻结点之间的通信问题，传送的协议数据单元称为数据帧 (Data frame)。</p>
+<p>数据帧中包含物理地址（又称 MAC 地址）、控制码、数据及校验码等信息。该层的主要作用是通过校验、确认和反馈重发等手段，将不可靠的物理链路转换成对网络层来说无差错的数据链路。</p>
+<p>此外，数据链路层还要协调收发双方的数据传输速率，即进行流量控制，以防止接收方因来不及处理发送方来的高速数据而导致缓冲器溢出及线路阻塞。</p>
+<p>类比：数据链路层相当于邮局中的装拆箱人员。</p>
+<p>数据链层的作用：</p>
+<ul>
+<li>
+<p>物理地址定义 		网络拓扑机构</p>
+</li>
+<li>
+<p>链路参数			差错验证</p>
+</li>
+<li>
+<p>物理介质访问		流控制</p>
+</li>
+</ul>
+<p>【进行逻辑链接 / 进行硬件地址寻址 / 差错校验等功能】</p>
+<p>7：物理层</p>
+<p>物理层是 OSI 参考模型的最底层，它利用传输介质为其上层数据链路层提供物理连接。它主要关心的是通过物理链路从一个节点向另一个节点传送比特流（bit），物理链路可能是铜缆、光纤、无线或其他的通讯媒介。它关心的问题有：多少伏电压代表 1？多少伏电压代表 0？时钟速率是多少？采用全双工、半双工还是单工通信？</p>
+<p>总的来说物理层关心的是链路的机械、电气、功能和规程特性。</p>
+<p>类比：物理层相当于邮局中的搬运工人。Physical Layer</p>
+<p>物理层的作用：</p>
+<ul>
+<li>提供传输数据的物理通路，传输数据</li>
+</ul>
+<p>​	【建立 / 维护 / 断开物理层链接】</p>
+<p>记忆口诀：应表会传网数物</p>
+<h1 id="二tcpip五层模型"><a class="markdownIt-Anchor" href="#二tcpip五层模型">#</a> 二：TCP/IP 五层模型</h1>
+<p>由于 ISO 指定的 OSI 参考模型过于庞大、复杂、在实现制作过程造成了很多困难，从而招致了很多批评。在现实中，TCP/IP 协议获得了广泛的应用。目前主流的操作系统网络协议基本上都采用了 TCP/IP 协议。而 TCP/IP 与 OSI 在分层模型上稍有区别：OSI 参考模型注重 &quot;通信协议必要的功能是什么&quot;，而 TCP/IP 则更强调 &quot;在计算机上实现协议应该开发那种程序&quot;。</p>
+<ul>
+<li>
+<p>另外一个著名的模型是 TCP/IP 模型，TCP/IP 是传输控制协议 / 网络互联协议的简称；</p>
+</li>
+<li>
+<p>早期的 TCP/IP 协议是一个四层结构，在后来的使用过程中借鉴 OSI 的七层参考模型，形成了一个新的五层结构；</p>
+</li>
+<li>
+<p>TCP/IP 是一系列协议的集合，所以严格的称呼应该是 TCP/IP 协议簇；</p>
+</li>
+</ul>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rqoZj.png" alt="7rqoZj.png"></p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rqqJ0.png" alt="7rqqJ0.png"></p>
+<p>1：开放式系统互联模型是一个参考标准，解释协议相互之间应该如何相互作用。TCP/IP 协议是美国国防部发明的，是让互联网成为了目前这个样子的标准之一。</p>
+<p>2：开放式系统互联模型中没有清楚地描绘 TCP/IP 协议，但是在解释 TCP/IP 协议很容易想到开放式系统互联模型。两者的主要区别如下：TCP/IP 协议中的应用层处理开放式系统互联模型中的第五层、第六层和第七层的功能。TCP/IP 协议中的传输层并不能总是保证在传输层可靠地传输数据包，而开放式系统互联模型可以做到。TCP/IP 协议还提供一项名为 UDP（用户数据报协议）的选择。UDP 不能保证可靠的数据包传输。</p>
+<p><strong>》》》模型对应的协议《《《</strong></p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rLSeJ.png" alt="7rLSeJ.png"></p>
+<table>
+<thead>
+<tr>
+<th>应用层</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP（超文本传输协议 80）：用于浏览器和 Web 服务器之间的请求和响应的交互</td>
+</tr>
+<tr>
+<td>DNS（域名系统 53）：用于连接 DNS 服务器</td>
+</tr>
+<tr>
+<td>SMTP（简单邮件传输协议 25）：用于接收邮件</td>
+</tr>
+<tr>
+<td>FTP（文件传输协议 21）：用于控制连接 FTP 服务器</td>
+</tr>
+<tr>
+<td>传输层</td>
+</tr>
+<tr>
+<td>TCP（传输控制协议）和 UDP（用户数据报协议）</td>
+</tr>
+<tr>
+<td>网络层 (本层 TCP/IP 定义了 IP 协议，而 IP 协议又由四个支撑协议组成)</td>
+</tr>
+<tr>
+<td>ARP（地址解析协议）：用于在局域网中根据 IP 地址获取物理地址</td>
+</tr>
+<tr>
+<td>RARP（逆地址解析协议）：用于在局域网中通过 ARP 表根据物理地址请求 IP 地址</td>
+</tr>
+<tr>
+<td>ICMP（网际控制报文协议）：用于验证网络是否畅通</td>
+</tr>
+<tr>
+<td>IGMP（网际组管理协议）：用于主机与组播路由器之间组播通信</td>
+</tr>
+<tr>
+<td>物理层和数据链路层</td>
+</tr>
+<tr>
+<td>IEEE802.3 有线局域网（以太网）标准</td>
+</tr>
+<tr>
+<td>IEEE802.11 无线局域网标准</td>
+</tr>
+</tbody>
+</table>
+<p><strong>》》》TCP 协议《《《</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在TCP/IP协议中,TCP协议提供可靠的连接服务,采用三次握手建立一个连接.</span><br><span class="line">TCP是面向连接的通信协议，通过三次握手建立连接，通讯完成时要拆除连接，由于TCP是面向连接的所以只能用于端到端的通讯。TCP提供的是一种可靠的数据流服务，采用<span class="string">&quot;带重传的肯定确认&quot;</span>技术来实现传输的可靠性。TCP还采用一种称为<span class="string">&quot;滑动窗口&quot;</span>的方式进行流量控制，所谓窗口实际表示接收能力，用以限制发送方的发送速度。</span><br><span class="line">建立TCP连接，就是指建立一个TCP连接时，需要客户端和服务端总共发送<span class="number">3</span>个包以确认连接的建立。在socket编程中，这一过程由客户端执行connect来触发。</span><br><span class="line">重点----注：seq:<span class="string">&quot;sequance&quot;</span>序列号；ack:<span class="string">&quot;acknowledge&quot;</span>确认号；SYN:<span class="string">&quot;synchronize&quot;</span>请求同步标志；；ACK:<span class="string">&quot;acknowledge&quot;</span>确认标志<span class="string">&quot;；FIN：&quot;</span>Finally<span class="string">&quot;结束标志。</span></span><br></pre></td></tr></table></figure>
+<p>使用 TCP 的协议：</p>
+<ul>
+<li>
+<p>FTP（文件传输协议）</p>
+</li>
+<li>
+<p>Telnet（远程登录协议）</p>
+</li>
+<li>
+<p>SMTP（简单邮件传输协议）</p>
+</li>
+<li>
+<p>POP3（和 SMTP 相对，用于接收邮件）</p>
+</li>
+<li>
+<p>HTTP 协议等。</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rLnwd.png" alt="7rLnwd.png"></p>
+<p><strong>重点</strong></p>
+<p><strong>第一次握手</strong>：Client 将标志位 SYN 置为 1，随机产生一个值 seq=J，并将该数据包发送给 Server，Client 进入 SYN_SENT 状态，等待 Server 确认。</p>
+<p>SYN：同步序列编号 (Synchronize Sequence Numbers)</p>
+<p><strong>第二次握手</strong>：Server 收到数据包后由标志位 SYN=1 知道 Client 请求建立连接，Server 将标志位 SYN 和 ACK 都置为 1，ack=J+1，随机产生一个值 seq=K，并将该数据包发送给 Client 以确认连接请求，Server 进入 SYN_RCVD 状态。</p>
+<p><strong>第三次握手</strong>：Client 收到确认后，检查 ack 是否为 J+1，ACK 是否为 1，如果正确则将标志位 ACK 置为 1，ack=K+1，并将该数据包发送给 Server，Server 检查 ack 是否为 K+1，ACK 是否为 1，如果正确则连接建立成功，Client 和 Server 进入 ESTABLISHED 状态，完成三次握手，随后 Client 与 Server 之间可以开始传输数据了。</p>
+</li>
+</ul>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rLHne.png" alt="7rLHne.png"></p>
+<p><strong>重点</strong></p>
+<p><strong>第一次挥手</strong>：Client 发送一个 FIN，用来关闭 Client 到 Server 的数据传送，Client 进入 FIN_WAIT_1 状态。</p>
+<p><strong>第二次挥手</strong>：Server 收到 FIN 后，发送一个 ACK 给 Client，确认序号为收到序号 + 1（与 SYN 相同，一个 FIN 占用一个序号），Server 进入 CLOSE_WAIT 状态。</p>
+<p><strong>第三次挥手</strong>：Server 发送一个 FIN，用来关闭 Server 到 Client 的数据传送，Server 进入 LAST_ACK 状态。</p>
+<p><strong>第四次挥手</strong>：Client 收到 FIN 后，Client 进入 TIME_WAIT 状态，接着发送一个 ACK 给 Server，确认序号为收到序号 + 1， Server 进入 CLOSED 状态，完成四次挥手。</p>
+<p>【问题 1】为什么连接的时候是三次握手，关闭的时候却是四次握手？ 答：因为当 Server 端收到 Client 端的 SYN 连接请求报文后，可以直接发送 SYN+ACK 报文。其中 ACK 报文是用来应答的，SYN 报文是用来同步的。但是关闭连接时，当 Server 端收到 FIN 报文时，很可能并不会立即关闭 SOCKET，所以只能先回复一个 ACK 报文，告诉 Client 端，“你发的 FIN 报文我收到了”。只有等到我 Server 端所有的报文都发送完了，我才能发送 FIN 报文，因此不能一起发送。故需要四步握手。</p>
+<p>如果有大量的连接，每次在连接、关闭时都要三次握手，四次挥手，会很明显会造成性能低下，因此，HTTP 有一种叫做 keep connection 的机制，它可以在传输数据后仍然保持连接，当客户端再次获取数据时，直接使用刚刚空闲下的连接而无需再次握手…</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rOi7j.png" alt="7rOi7j.png"></p>
+<p><strong>》》》UDP 协议《《《</strong></p>
+<p>UDP 用户数据报协议，是面向无连接的通讯协议，UDP 数据包括目的端口号和源端口号信息，由于通讯不需要连接，所以可以实现广播发送。</p>
+<p>UDP 通讯时不需要接收方确认，属于不可靠的传输，可能会出现丢包现象，实际应用中要求程序员编程验证。</p>
+<p>UDP 与 TCP 位于同一层，但它不管数据包的顺序、错误或重发。因此，UDP 不被应用于那些使用虚电路的面向连接的服务，UDP 主要用于那些面向查询 — 应答的服务，例如 NFS。相对于 FTP 或 Telnet，这些服务需要交换的信息量较小。</p>
+<p>每个 UDP 报文分 UDP 报头和 UDP 数据区两部分。报头由四个 16 位长（2 字节）字段组成，分别说明该报文的源端口、目的端口、报文长度以及校验值。UDP 报头由 4 个域组成，其中每个域各占用 2 个字节，具体如下：</p>
+<ul>
+<li>
+<p>（1）源端口号；</p>
+</li>
+<li>
+<p>（2）目标端口号；</p>
+</li>
+<li>
+<p>（3）数据报长度；</p>
+</li>
+<li>
+<p>（4）校验值。</p>
+</li>
+</ul>
+<p>使用 UDP 协议包括：TFTP（简单文件传输协议）、SNMP（简单网络管理协议）、DNS（域名解析协议）、NFS、BOOTP。</p>
+<p><strong>》》》TCP 和 UDP 的区别《《《</strong></p>
+<p><strong>重点</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>：连接方面区别： i：TCP面向连接（如打电话要先拨号建立连接）。 ii：UDP是无连接的，即发送数据之前不需要建立连接。 </span><br><span class="line"><span class="number">2</span>：安全方面的区别： i：TCP提供可靠的服务，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达。 ii：UDP尽最大努力交付，即不保证可靠交付。 </span><br><span class="line"><span class="number">3</span>：传输效率的区别： i：TCP传输效率相对较低。 ii：UDP传输效率高，适用于对高速传输和实时性有较高的通信或广播通信。 </span><br><span class="line"><span class="number">4</span>：连接对象数量的区别： i：TCP连接只能是点到点、一对一的。 ii：UDP支持一对一，一对多，多对一和多对多的交互通信。</span><br></pre></td></tr></table></figure>
+<p><strong>》》》数据封装与解封装过程《《《</strong></p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rOauD.png" alt="7rOauD.png"></p>
+<p><strong>1. 数据封装过程</strong></p>
+<p>​</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>在应用层，用户的数据被转换成二进制数据 </span><br><span class="line"><span class="number">2.</span>在传输层，上层数据被分割成很小的数据段，并为每个分段后的数据封装TCP报文头部</span><br><span class="line"><span class="number">3.</span>在网络层，上层数据被封装上新的报文头部——IP头部 </span><br><span class="line"><span class="number">4.</span>在数据链路层，上层数据被封装一个MAC头部，其内部有一个关键的字段信息——MAC地址 </span><br><span class="line"><span class="number">5.</span>在物理层，无论在之前封装的报文头部还是上层的数据信息都是由二进制数组成的，在物理层，将这些二进制数字组成的比特流转换成电信号在网络中传输</span><br></pre></td></tr></table></figure>
+<p>​      2. 数据解封装过程</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">数据被封装完毕通过网络传输到接收方以后，将进入数据的解封装过程，这将是封装过程的一个逆过程 </span><br><span class="line"><span class="number">1.</span>在物理层，首先将电信号转换成二进制数据，并将数据数据送至数据链路层 </span><br><span class="line"><span class="number">2.</span>在数据链路层，查看目标MAC地址，如果吻合就“拆掉”，将剩下的数据送往上一层</span><br><span class="line"><span class="number">3.</span>在网络层，核实目标IP地址是否与自己的IP地址相同，从而确定是否送至上一层 </span><br><span class="line"><span class="number">4.</span>在传输层，首先根据TCP头部判断数据送往哪个应用层协议或应用程序，将之前被分组的数据段重组，再送往上一层 </span><br><span class="line"><span class="number">5.</span>在应用层，这些二进制数据将经历复杂的解码过程还原成发送者所输送的最初信息</span><br><span class="line">》》》数据传输基本概念《《《</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>对于 OSI 模型而言，每一层都是通过协议数据单元来进行通信的，而对于 TCP/IP 五层模型，也可以沿用这个概念</p>
+</li>
+<li>
+<p>PDU（协议数据单元）是指同层之间传递的数据单位</p>
+</li>
+<li>
+<p>应用数据需要经过 TCP/IP 每一层处理之后才能传输到目的端，每一层都使用该层的协议数据单元 PDU 彼此交换信息，不同层的 PDU 中包含有不同的信息，因此 PDU 在不同层被赋予了不同的名称</p>
+</li>
+</ul>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rO68P.png" alt="7rO68P.png"></p>
+<p><strong>》》》硬件设备对应五层模型《《《</strong></p>
+<p>设备属于哪一层要看这个设备主要工作在哪一层，有什么对应的功能…</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rO4Ej.png" alt="7rO4Ej.png"></p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-01-19 17:50:47" itemprop="dateModified" datetime="2022-01-19T17:50:47+08:00">2022-01-19</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/admin.png" alt="John Doe 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/admiw.png" alt="John Doe 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>John Doe <i class="ic i-at"><em>@</em></i>Hexo
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/01/19/daxian%201.2/" title="第二天：计算机网络">http://example.com/2022/01/19/daxian 1.2/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/01/19/daxian%201.1/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclh5u05ej20zk0m87df.jpg" title="第一天：计算机组成">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>第一天：计算机组成</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-osi%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text"> 一： OSI 七层参考模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8Ctcpip%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text"> 二：TCP&#x2F;IP 五层模型</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="John Doe"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">John Doe</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">3</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/19/daxian%201.2/" title="第二天：计算机网络">第二天：计算机网络</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/18/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/19/daxian%201.1/" title="第一天：计算机组成">第一天：计算机组成</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">John Doe @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/01/19/daxian 1.2/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

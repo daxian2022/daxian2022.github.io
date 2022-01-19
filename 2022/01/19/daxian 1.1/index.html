@@ -1,0 +1,575 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hexo" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hexo" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Hexo" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2022/01/19/daxian%201.1/">
+
+
+
+  <title>
+第一天：计算机组成 |
+Yume Shoka = Hexo</title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">第一天：计算机组成
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-01-19 16:44:09">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-01-19T16:44:09+08:00">2022-01-19</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
+          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeyvx1d4j20zk0m8hdt.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/19/daxian%201.1/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="John Doe">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="一计算机组成"><a class="markdownIt-Anchor" href="#一计算机组成">#</a> 一。计算机组成</h1>
+<h2 id="1计算机组成"><a class="markdownIt-Anchor" href="#1计算机组成">#</a> 1. 计算机组成</h2>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7r40W4.png" alt="7r40W4.png"></p>
+<h3 id="11硬件系统"><a class="markdownIt-Anchor" href="#11硬件系统">#</a> 1.1：硬件系统</h3>
+<h4 id="i中央处理器"><a class="markdownIt-Anchor" href="#i中央处理器">#</a> i：中央处理器</h4>
+<p>运算器、控制器统称中央处理器（cpu）：负责数据的算数运算和逻辑运算，及数据的加工处理，是整个计算机的中枢神经，分析程序的可控制信息，并根据程序要求进行控制，协调计算机各部分组件工作及内存与外设的访问等。</p>
+<h4 id="ii存储器"><a class="markdownIt-Anchor" href="#ii存储器">#</a> ii：存储器</h4>
+<p>实现记忆功能的部件，用来存储程序、数据和各种信号、命令等信息、并在需要时提供这些信息。内存（rom 只读存储器；ram 随机存储器；断电就会消失）；外存（硬盘、软盘、光盘）。</p>
+<h4 id="iii输入输出设备"><a class="markdownIt-Anchor" href="#iii输入输出设备">#</a> iii：输入输出设备</h4>
+<p>计算机从输入设备获得外部的信息。输入设备将外部信息以一定的数据格式送入系统，并由输出设备输出。如：键盘输入一首歌曲名称，将这一数据送入系统，音响播放。</p>
+<h3 id="12软件系统"><a class="markdownIt-Anchor" href="#12软件系统">#</a> 1.2：软件系统</h3>
+<p>操作系统主要作用是管理好硬件设备。</p>
+<h4 id="i桌面操作系统"><a class="markdownIt-Anchor" href="#i桌面操作系统">#</a> i：桌面操作系统</h4>
+<p>window 系列：用户群体大</p>
+<p>macOS：适合于开发人员</p>
+<p>linux：应用软件少</p>
+<h4 id="ii服务器操作系统"><a class="markdownIt-Anchor" href="#ii服务器操作系统">#</a> ii：服务器操作系统</h4>
+<p>linux：安全、稳定、免费；占有率高</p>
+<p>windows server：收费；占有率低</p>
+<h4 id="iii嵌入式操作系统"><a class="markdownIt-Anchor" href="#iii嵌入式操作系统">#</a> iii：嵌入式操作系统</h4>
+<p>linux：体积小</p>
+<p>主要运用：机顶盒、网络电话、手机等等</p>
+<h4 id="iiii移动设备操作系统"><a class="markdownIt-Anchor" href="#iiii移动设备操作系统">#</a> iiii：移动设备操作系统</h4>
+<p>IOS</p>
+<p>Android（基于 linux）</p>
+<h2 id="2进制的转换"><a class="markdownIt-Anchor" href="#2进制的转换">#</a> 2: 进制的转换</h2>
+<h3 id="21什么是进制"><a class="markdownIt-Anchor" href="#21什么是进制">#</a> 2.1：什么是进制？</h3>
+<p>进制也就是进位计数制，是人为定义的带进位的计数方法（有不带进位的计数方法，比如原始的结绳计数法，唱票时常用的 “正” 字计数法）。 对于任何一种进制 —X 进制，就表示每一位置上的数运算时都是逢 X 进一位。 十进制是逢十进一，十六进制是逢十六进一，二进制就是逢二进一，以此类推，x 进制就是逢 x 进位。</p>
+<h3 id="22-二进制转换十进制"><a class="markdownIt-Anchor" href="#22-二进制转换十进制">#</a> 2.2 ：二进制转换十进制</h3>
+<p>二进制转为十进制要从右到左用二进制的每个数去乘以 2 的相应次方，小数点后则是从左往右。</p>
+<p>如果首位是 0 就表示正整数，如果首位是 1 则表示负整数，正整数可以直接换算，负整数则需要先取反再换算。</p>
+<p>因为计算机内部表示数的字节单位是定长的。如 8 位、16 位、32 位。所以位数不够时，高位补零。</p>
+<ul>
+<li>
+<p>如要想二进制 00101010 转为十进制，因为以 0 开头，所以这是正整数，计算如下所示：</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7rI4sA.png" alt="7rI4sA.png"></p>
+</li>
+</ul>
+<h3 id="23-整数转二进制"><a class="markdownIt-Anchor" href="#23-整数转二进制">#</a> 2.3： 整数转二进制</h3>
+<p>采用 &quot;除 2 取余，逆序排列&quot; 法：</p>
+<p>1. 首先用 2 整除一个十进制整数，得到一个商和余数<br>
+ 2. 然后再用 2 去除得到的商，又会得到一个商和余数<br>
+ 3. 重复操作，一直到商为小于 1 时为止<br>
+ 4. 然后将得到的所有余数全部排列起来，再将它反过来（逆序排列），切记一定要反过来！</p>
+<p>假设我们现在需要将 42 转为二进制，那我们怎么做呢，如下图所示：</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7roEQJ.png" alt="7roEQJ.png"></p>
+<h3 id="24小数转二进制"><a class="markdownIt-Anchor" href="#24小数转二进制">#</a> 2.4：小数转二进制</h3>
+<p>采用 &quot;乘 2 取整，顺序排列&quot; 法：</p>
+<p>1. 用 2 乘十进制小数，可以得到积，将积的整数部分取出<br>
+ 2. 再用 2 乘余下的小数部分，又得到一个积，再将积的整数部分取出<br>
+ 3. 重复操作，直到积中的小数部分为零，此时 0 或 1 为二进制的最后一位，或者达到所要求的精度为止</p>
+<p>例如将 0.125 转换为二进制：</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7roteI.png" alt="7roteI.png"></p>
+<h3 id="25十六进制转十进制"><a class="markdownIt-Anchor" href="#25十六进制转十进制">#</a> 2.5：十六进制转十进制</h3>
+<p>1、首先明白 16 进制数（从右到左数是第 0 位，第 1 位，第 2 位……）的第 0 位的权值为 16 的 0 次方，第 1 位的权值为 16 的 1 次方，第 2 位的权值为 16 的 2 次方，依次这样排列下去。</p>
+<p>2、明白 ABCDEF 表示的二进制数字分别是 10，11，12，13，14，15。</p>
+<p>3、十六进制转换成十进制的公式是：要从右到左用二进制的每个数去乘以 16 的相应次方，然后这些数字相加就是了。</p>
+<p>例 1：2AF5 换算成 10 进制:</p>
+<p>第 0 位： 5 * 16^0 = 5</p>
+<p>第 1 位： F * 16^1 =15*16^1= 240</p>
+<p>第 2 位： A * 16^2= 10* 16^2=2560</p>
+<p>第 3 位： 2 * 16^3 = 8192</p>
+<p>结果就是：5 * 16^0 + 15 * 16^1 + 10 * 16^2 + 2 * 16^3 = 10997</p>
+<p>例 2：CE 换算成 10 进制:</p>
+<p>第 0 位：E*16<sup>0=14*16</sup>0=14</p>
+<p>第 1 位：C*16<sup>1=12*16</sup>1=192</p>
+<p>结果就是：14*16<sup>0+12*16</sup>1=206</p>
+<h3 id="28拓展资料"><a class="markdownIt-Anchor" href="#28拓展资料">#</a> 2.8：拓展资料</h3>
+<p>16 进制即逢 16 进 1，每一位上可以是从小到大为 0、1、2、3、4、5、6、7、8、9、A、B、C、D、E、F 共 16 个大小不同的数。16 进制转换即 16 进制与其他不同进制之间的换算转换。</p>
+<h2 id="3服务协议与端口"><a class="markdownIt-Anchor" href="#3服务协议与端口">#</a> 3：服务，协议与端口</h2>
+<h3 id="31常见的计算机服务"><a class="markdownIt-Anchor" href="#31常见的计算机服务">#</a> 3.1：常见的计算机服务</h3>
+<p>计算机中的服务是一种应用程序类型，在后台运行。服务应用程序通常可以在本地和通过网络为用户提供一些功能，例如客户端 / 服务器应用程序、Web 服务器、数据库服务器以及其他基于服务器的应用程序。</p>
+<h3 id="32常见的计算机服务"><a class="markdownIt-Anchor" href="#32常见的计算机服务">#</a> 3.2：常见的计算机服务</h3>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/19/7r7kr9.png" alt="7r7kr9.png"></p>
+<h2 id="4dos命令"><a class="markdownIt-Anchor" href="#4dos命令">#</a> 4:Dos 命令</h2>
+<h3 id="41运行命令"><a class="markdownIt-Anchor" href="#41运行命令">#</a> 4.1：&quot;运行&quot; 命令</h3>
+<p><strong>gpedit.msc 		 组策略</strong></p>
+<p><strong>lusrmgr.msc 		本地用户和组</strong></p>
+<p><strong>services.msc 		本地服务设置</strong></p>
+<p><strong>compmgmt.msc 		计算机管理</strong></p>
+<p><strong>taskmgr				任务管理器</strong></p>
+<p>diskmgmt.msc 		磁盘管理程序</p>
+<p>devmgmt.msc 		设备管理器</p>
+<p>fsmgmt.msc 		 共享文件夹管理</p>
+<p>chkdsk.exe 		 chkdsk 磁盘检查</p>
+<p>msconfig.exe 		 系统配置 (引导 服务 启动 工具)</p>
+<p><strong>mstsc 		 远程桌面</strong></p>
+<p><strong>regedit					注册表</strong></p>
+<p>mspaint 		 画图</p>
+<p><strong>write 		 写字板</strong></p>
+<p><strong>notepad 		打开记事本</strong></p>
+<p><strong>calc 		 打开计算器</strong></p>
+<p>explorer 		 打开资源管理器</p>
+<p>logoff 		 注销命令</p>
+<p>shutdown 		60 秒倒计时关机</p>
+<p><strong>dos 命令</strong></p>
+<p>cpn：内容分发网络；</p>
+<p>cdn 防止攻击，分发多个地址（DDoS 攻击）</p>
+<p><strong>从 3389</strong></p>
+<p><strong>pid 管道符到 netstat</strong></p>
+<p><strong>quser 当前登录的用户</strong></p>
+<p>set 		显示当前所有环境变量（键值对形式出现）</p>
+<p>dir 		查看当前目录下所有文件及文件夹；</p>
+<p>dir /a 				显示包含隐藏文件的所有内容</p>
+<p>whoami 		查看当前计算机及当前用户名称</p>
+<p>ipconfig 		产看 ip 信息</p>
+<p>tasklist -svc 		 查看服务对应 PId</p>
+<p>tasklist 		 显示当前运行程序的 pid，会话，进程、服务</p>
+<p>systeminfo 		 查看计算机详细信息</p>
+<p>attrib 		文件 / 文件夹 ：查看文件或文件夹信息</p>
+<p>tree 		树状图显示文件夹及文件</p>
+<p>type + 文件名 	 查看文件 ，内容，如 type 1.txt 查看 1.txt 文件内容</p>
+<p>start	+ 文件名	 	运行记事本并查看 1.txt 文本内容，如 start 1.txt</p>
+<p>restart 重启</p>
+<p>more + 文件名		 		分屏查看，如 more 1.txt 分屏查看 1.txt 内容</p>
+<p>at			 		 查看计划任务（windows10 废除)</p>
+<p>arp -a 				查看网内主机</p>
+<p>net user				查看当前计算机所有用户</p>
+<p>net user 账户名	 查看账户属性</p>
+<p>net start 				查看开启的服务</p>
+<p>net start\stop 服务名 	启动服务 / 关闭服务</p>
+<p><strong>net view				查看本地局域网内开启了那些共享</strong></p>
+<p><strong>net view ip 		查看对方局域网内开启的共享</strong></p>
+<p><strong>net config 			显示系统网络设置</strong></p>
+<p>net share 			查看本地开启的共享</p>
+<p>netstat -an（an 用处更大）	 查看开启的端口</p>
+<p>netstat -ano	 		查看端口占用情况</p>
+<p><strong>nslookup				查询 DNS 的记录，查询域名解析，用来诊断网络问题</strong></p>
+<p>tracert				路由追踪 （默认跳转 30 个跃点跟踪）</p>
+<p>systeminfo	 		 查看计算机详细信息</p>
+<p>ping 	网络地址 回车 	测试当前。计算机与要访问计算机联通情况</p>
+<p>cd					 切换目录</p>
+<p>cd… 			 		 返回上一级</p>
+<p>cd \ 			 		 切换到根目录</p>
+<p>cd .&gt; test.txt 	 		 创建 test.txt 文件</p>
+<p>E：					 跳转到 e 盘</p>
+<p>md test 		 	 创建 test 目录</p>
+<p>rd test				删除 test 目录</p>
+<p>rd test \s 			删除时需要确认</p>
+<p>rd test				删除 test 目录</p>
+<p>copy con test.txt 	dos 创建文件并在 dos 写入，存在即覆盖原完成后 ctrl+z 回车</p>
+<p>del test.txt 			删除 test.txt 加 -f 强制删除</p>
+<p>copy			 	 复制 / 合并，例：copy 1.txt/a + 2.jpg/b 3.jpg/c （/a b c 字符集）把 1.txt 和 2.jpg 合并到	3.jpg 中</p>
+<p>move 				移动 / 重命名</p>
+<p>​					例 move 1.txt test 把 1.txt 移动到 test 目录</p>
+<p>​					move 1.txt test.txt 把 1.txt 重命名为 test.txt</p>
+<p><strong>net user a a/add 添加一个新用户为 a net localgroup administrators a /add</strong></p>
+<p>ren				 重命名 用法同上</p>
+<p>attrib 文件 / 目录名	 -a -r -s -h</p>
+<p>​			 去掉文件 / 文件夹的存档 只读 系统 隐藏 的属性 ＋号相反 ipconfig /relese 		释放 ip /new 重新获取 ip</p>
+<p>net start 服务名 			开启某服务 （stop 停止）（restart 重启）</p>
+<p>shutdown -s 				一分钟后关机</p>
+<p>shutdown -s -t 100 -c “bye”	100 秒后关机并弹出 bye 消息</p>
+<p>shutdown -a 				取消计划的关机任务</p>
+<p>at id 时间 				在指定时间内开启一个已注册的 id 任务</p>
+<p>at \delete 				删除计划任务</p>
+<p><strong>net use K: \ip \c$ 		映射目标 ip 的 c 盘到本地 k 盘</strong></p>
+<p>net use k: \ip \c$ \del 		删除映射的 k 盘</p>
+<p>taskkill \f \im xx.exe 		 强行杀死 xx.exe 进程 c</p>
+<p>findstr “Hello” aa.txt 			在 aa.txt 文件中寻找字符串 hello</p>
+<p>find 	文件名				 查找某文件</p>
+<p><strong>echo hello » pass.txt 		将 hello 追加到 pass.txt 文件中 (一个&gt; 直接覆盖原内容)</strong></p>
+<p>color 02 					把 cmd 中的字 改为黑色背景绿色字体</p>
+<p>cls 						清屏</p>
+<p><strong>批处理命令</strong></p>
+<p>所谓的批处理，也就是将多条基本的 dos 命令写入一个.bat 的批处理文件，批处理会自上而下的完成一些文件内的命令，从而实现一些功能。</p>
+<p>@echo off	关闭系统盘符回显</p>
+<p>color xx	设置颜色</p>
+<p>pause		暂停，按下按键继续</p>
+<p>title xxx	修改窗口标题</p>
+<p>echo.		换行显示</p>
+<p>:xx		区分代码块，单独使用没有效果，结合 goto 使用</p>
+<p>goto xx		跳转到某区块</p>
+<p>start		后面跟会文件，网址，程序等都会被打开，为空白会默认打开 cmd</p>
+<p>&gt;nul 2&gt;nul 	正确的错误的一起屏蔽掉，啥也不显示了</p>
+<p>set x=100	设置变量 a=100</p>
+<p>set /p x = 提示		提示用户，并获取用户键盘输入，然后传给 x</p>
+<p>% x%			调用变量</p>
+<p>exit			退出批处理</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-01-19 17:37:10" itemprop="dateModified" datetime="2022-01-19T17:37:10+08:00">2022-01-19</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/admin.png" alt="John Doe 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/admiw.png" alt="John Doe 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>John Doe <i class="ic i-at"><em>@</em></i>Hexo
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/01/19/daxian%201.1/" title="第一天：计算机组成">http://example.com/2022/01/19/daxian 1.1/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/01/18/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclh0m9pdj20zk0m8hdt.jpg" title="Hello World">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>Hello World</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/01/19/daxian%201.2/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicljitigmj20zk0m87fp.jpg" title="第二天：计算机网络">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>第二天：计算机网络</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90"><span class="toc-number">1.</span> <span class="toc-text"> 一。计算机组成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90"><span class="toc-number">1.1.</span> <span class="toc-text"> 1. 计算机组成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11%E7%A1%AC%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 1.1：硬件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#i%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> i：中央处理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ii%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> ii：存储器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iii%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87"><span class="toc-number">1.1.1.3.</span> <span class="toc-text"> iii：输入输出设备</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 1.2：软件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#i%E6%A1%8C%E9%9D%A2%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> i：桌面操作系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ii%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> ii：服务器操作系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iii%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.2.3.</span> <span class="toc-text"> iii：嵌入式操作系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iiii%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.2.4.</span> <span class="toc-text"> iiii：移动设备操作系统</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E8%BF%9B%E5%88%B6%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.</span> <span class="toc-text"> 2: 进制的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9B%E5%88%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.1：什么是进制？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2 ：二进制转换十进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-%E6%95%B4%E6%95%B0%E8%BD%AC%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 2.3： 整数转二进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24%E5%B0%8F%E6%95%B0%E8%BD%AC%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 2.4：小数转二进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8D%81%E8%BF%9B%E5%88%B6"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 2.5：十六进制转十进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28%E6%8B%93%E5%B1%95%E8%B5%84%E6%96%99"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 2.8：拓展资料</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E6%9C%8D%E5%8A%A1%E5%8D%8F%E8%AE%AE%E4%B8%8E%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.3.</span> <span class="toc-text"> 3：服务，协议与端口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#31%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 3.1：常见的计算机服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#32%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 3.2：常见的计算机服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4dos%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text"> 4:Dos 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 4.1：&quot;运行&quot; 命令</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="John Doe"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">John Doe</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">3</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2022/01/18/hello-world/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/01/19/daxian%201.2/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/18/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/19/daxian%201.1/" title="第一天：计算机组成">第一天：计算机组成</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/19/daxian%201.2/" title="第二天：计算机网络">第二天：计算机网络</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">John Doe @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/01/19/daxian 1.1/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
