@@ -5,8 +5,22 @@
         <link>http://example.com</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Wed, 19 Jan 2022 17:35:23 +0800</pubDate>
-        <lastBuildDate>Wed, 19 Jan 2022 17:35:23 +0800</lastBuildDate>
+        <pubDate>Thu, 20 Jan 2022 19:12:07 +0800</pubDate>
+        <lastBuildDate>Thu, 20 Jan 2022 19:12:07 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://example.com/2022/01/20/daxian%201.3/</guid>
+            <title></title>
+            <link>http://example.com/2022/01/20/daxian%201.3/</link>
+            <pubDate>Thu, 20 Jan 2022 19:12:07 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2022/01/19/article-title/</guid>
+            <title>article title</title>
+            <link>http://example.com/2022/01/19/article-title/</link>
+            <pubDate>Wed, 19 Jan 2022 19:34:13 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2022/01/19/daxian%201.2/</guid>
             <title>第二天：计算机网络</title>
@@ -479,7 +493,7 @@
 &lt;p&gt;set x=100	设置变量 a=100&lt;/p&gt;
 &lt;p&gt;set /p x = 提示		提示用户，并获取用户键盘输入，然后传给 x&lt;/p&gt;
 &lt;p&gt;% x%			调用变量&lt;/p&gt;
-&lt;p&gt;exit			退出批处理&lt;/p&gt;
+&lt;p&gt;exit			退出批处理。&lt;/p&gt;
  ]]></description>
         </item>
         <item>

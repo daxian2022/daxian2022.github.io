@@ -3,7 +3,21 @@
     <id>http://example.com</id>
     <title>Hexo</title>
     <link href="http://example.com" />
-    <updated>2022-01-19T09:35:23.393Z</updated>
+    <updated>2022-01-20T11:12:07.641Z</updated>
+    <entry>
+        <id>http://example.com/2022/01/20/daxian%201.3/</id>
+        <title></title>
+        <link rel="alternate" href="http://example.com/2022/01/20/daxian%201.3/"/>
+        <content type="html"></content>
+        <updated>2022-01-20T11:12:07.641Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2022/01/19/article-title/</id>
+        <title>article title</title>
+        <link rel="alternate" href="http://example.com/2022/01/19/article-title/"/>
+        <content type="html"></content>
+        <updated>2022-01-19T11:34:13.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2022/01/19/daxian%201.2/</id>
         <title>第二天：计算机网络</title>
@@ -475,7 +489,7 @@
 &lt;p&gt;set x=100	设置变量 a=100&lt;/p&gt;
 &lt;p&gt;set /p x = 提示		提示用户，并获取用户键盘输入，然后传给 x&lt;/p&gt;
 &lt;p&gt;% x%			调用变量&lt;/p&gt;
-&lt;p&gt;exit			退出批处理&lt;/p&gt;
+&lt;p&gt;exit			退出批处理。&lt;/p&gt;
 </content>
         <updated>2022-01-19T08:44:09.376Z</updated>
     </entry>
