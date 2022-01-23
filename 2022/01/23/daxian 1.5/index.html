@@ -1,0 +1,1251 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hexo" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hexo" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Hexo" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2022/01/23/daxian%201.5/">
+
+
+
+  <title>
+第五天：MySQL语法 |
+Yume Shoka = Hexo</title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">第五天：MySQL语法
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2022-01-23 10:13:33">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2022-01-23T10:13:33+08:00">2022-01-23</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhtuo6nj20zk0m8ttm.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipetfk5zwj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/23/daxian%201.5/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="da xian">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h2 id="课堂导学"><a class="markdownIt-Anchor" href="#课堂导学">#</a> 课堂导学：</h2>
+<p>Sql 语句的学习主要为渗透中 Sql 注入漏洞打下坚实基础，这样在学 Sql 注入漏洞时才能一马平川。</p>
+<h2 id="知识框架"><a class="markdownIt-Anchor" href="#知识框架">#</a> 知识框架：</h2>
+<p>1：常见 SQL 语句</p>
+<p>2：SQL 之增删改查</p>
+<p>3：SQL 中 tips</p>
+<p>4：注入中常见的 sql 函数</p>
+<h2 id="1常见的sql语句"><a class="markdownIt-Anchor" href="#1常见的sql语句">#</a> 1：常见的 SQL 语句</h2>
+<h3 id="11sql介绍"><a class="markdownIt-Anchor" href="#11sql介绍">#</a> 1.1：SQL 介绍</h3>
+<ul>
+<li>
+<ul>
+<li>SQL 是用于访问和处理数据库的标准的计算机语言。</li>
+<li>SQL，指结构化查询语言，全称是 Structured Query Language。</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>SQL 让您可以访问和处理数据库。</li>
+<li>SQL 是一种 ANSI（American National Standards Institute 美国国家标准化组织）标准的计算机语言。</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>简单来说就是按照 数据结构来组织、 存储和管理数据的仓库。</li>
+<li>数据库是以一定方式储存在一起、能与多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>MySQL 也是一个<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlODUlQjMlRTclQjMlQkIlRTUlOUUlOEIlRTYlOTUlQjAlRTYlOEQlQUUlRTUlQkElOTMlRTclQUUlQTElRTclOTAlODYlRTclQjMlQkIlRTclQkIlOUYvNjk2NTEx">关系型数据库管理系统</span>，也是最受欢迎的开源软件之一。</li>
+</ul>
+</li>
+</ul>
+<h3 id="12sql特点"><a class="markdownIt-Anchor" href="#12sql特点">#</a> 1.2：SQL 特点</h3>
+<ul>
+<li>
+<ul>
+<li>SQL 面向数据库执行查询</li>
+<li>SQL 可从数据库取回数据</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>SQL 可在数据库中插入新的记录</li>
+<li>SQL 可更新数据库中的数据</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>SQL 可从数据库删除记录</li>
+<li>SQL 可创建新数据库</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>SQL 可在数据库中创建新表</li>
+<li>SQL 可在数据库中创建存储过程</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>SQL 可在数据库中创建视图</li>
+<li>SQL 可以设置表、存储过程和视图的权限</li>
+</ul>
+</li>
+</ul>
+<h3 id="13数据库操作"><a class="markdownIt-Anchor" href="#13数据库操作">#</a> 1.3：数据库操作</h3>
+<h4 id="连接数据库"><a class="markdownIt-Anchor" href="#连接数据库">#</a> 连接数据库</h4>
+<p>明文连接</p>
+<p>mysql -h127.0.0.1 -P3306 -uroot -proot – 明文</p>
+<p>如果连接本地数据库 -h 可以省略 如果服务器端口是 3306，-P 端口号也可以省略</p>
+<p>mysql -uroot -proot	– 明文</p>
+<p>密文连接</p>
+<p>mysql -uroot -p</p>
+<p>Enter password: ****</p>
+<h4 id="退出数据库"><a class="markdownIt-Anchor" href="#退出数据库">#</a> 退出数据库</h4>
+<p>EXIT -- 方法一</p>
+<p>quit -- 方法二</p>
+<p>\q -- 方法三</p>
+<p>ctrl+c -- 方法四</p>
+<h4 id="注意"><a class="markdownIt-Anchor" href="#注意">#</a> 注意</h4>
+<p>sql 语句最后需要有分号；结尾</p>
+<h3 id="14常用的sql语句"><a class="markdownIt-Anchor" href="#14常用的sql语句">#</a> 1.4：常用的 SQL 语句</h3>
+<p>查询当前数据库版本：		select version ();</p>
+<p>查询当前数据库用户：		select user ();</p>
+<p>查询当前路径：			select @@basedir;</p>
+<p>查询所有数据库：			show databases;</p>
+<p>选择一个数据库：			use + 数据库名；</p>
+<p>查询当前数据库：			select database ();</p>
+<p>查询所有表名：			show tables;</p>
+<p>创建一个数据库：			create database 数据库名；</p>
+<p>删除一个数据库：			drop database 数据库名；</p>
+<p>查询一个表的结构：		desc 表名；</p>
+<h3 id="15数据库表字段的运用"><a class="markdownIt-Anchor" href="#15数据库表字段的运用">#</a> 1.5：数据库表，字段的运用</h3>
+<h4 id="数据库表"><a class="markdownIt-Anchor" href="#数据库表">#</a> 数据库表</h4>
+<ul>
+<li>
+<ul>
+<li>一个数据库通常包含一个或多个表。每个表由一个名字标识（例如 “客户” 或者 “订单”）；表包含带有数据的记录（行）。</li>
+<li>下面的例子是一个名为 “Persons” 的表：</li>
+</ul>
+</li>
+</ul>
+<p>表包含三条记录（每一条对应一个人）和五个列（Id、姓、名、地址和城市）</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/743ky8.png" alt="743ky8.png"></p>
+<h4 id="sql-dml-和-ddl"><a class="markdownIt-Anchor" href="#sql-dml-和-ddl">#</a> SQL DML 和 DDL</h4>
+<p>可以把 SQL 分为两个部分：数据操作语言 (DML) 和 数据定义语言 (DDL)。</p>
+<h4 id="sql-的-dml-部分"><a class="markdownIt-Anchor" href="#sql-的-dml-部分">#</a> SQL 的 DML 部分</h4>
+<ul>
+<li>
+<p>select - 从数据库表中获取数据</p>
+</li>
+<li>
+<p>update - 更新数据库表中的数据</p>
+</li>
+<li>
+<p>delete - 从数据库表中删除数据</p>
+</li>
+<li>
+<p>inset into - 向数据库表中插入数据</p>
+</li>
+</ul>
+<h4 id="sql-dml-和-ddl-2"><a class="markdownIt-Anchor" href="#sql-dml-和-ddl-2">#</a> SQL DML 和 DDL</h4>
+<ul>
+<li>
+<p>create database - 创建新数据库</p>
+</li>
+<li>
+<p>alter database - 修改数据库</p>
+</li>
+<li>
+<p>create table - 创建新表</p>
+</li>
+<li>
+<p>alter table- 变更（改变）数据库表</p>
+</li>
+<li>
+<p>drop table - 删除表</p>
+</li>
+<li>
+<p>create index - 创建索引（搜索键）</p>
+</li>
+<li>
+<p>drop index - 删除索引</p>
+</li>
+</ul>
+<p><strong>SQL 对大小写不敏感；</strong></p>
+<h4 id="创建表"><a class="markdownIt-Anchor" href="#创建表">#</a> 创建表</h4>
+<p><strong>语法</strong>：create table 数据表名字 (字段 类型 约束 [, 字段 类型 约束]);</p>
+<p><strong>约束</strong>：</p>
+<p>auto_increment	表示自动增长</p>
+<p>not null 			表示不能为空</p>
+<p>primary key 		表示主键</p>
+<p>foreign key	 标识该属性为该表的外键，是与之联系某表的主键</p>
+<p>default 			默认值</p>
+<p>unique 标识该属性的值是唯一的</p>
+<h4 id="举例针对表常用命令"><a class="markdownIt-Anchor" href="#举例针对表常用命令">#</a> 举例 (针对表常用命令)</h4>
+<p>在 class 数据库下创建 student 表 (id、name、age、sex、birthday)</p>
+<p>create table student(id int,name varchar(20),age int,sex varchar(20),birthday int);</p>
+<p>查看表结构</p>
+<p>desc student;</p>
+<p>各字段的含义解释</p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>Null：表示该列是否可以存储 NULL 值。</li>
+<li>Key：表示该列是否已编制索引。PRI 表示该列是表主键的一部分，UNI 表示该列是 UNIQUE 索引的一部分，MUL 表示在列中某个给定值允许出现多次。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>Default：表示该列是否有默认值，如果有，值是多少。</li>
+<li>Extra：表示可以获取的与给定列有关的附加信息，如 AUTO_INCREMENT 等。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>查看创建表时的 CREATE TABLE 语句</p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>show create table 表名 \G； 如果不加 \G 参数显示会混乱，加了显示结果易于查看，比较直观。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>删除表</p>
+<p>drop table student;</p>
+<p>修改表名</p>
+<p>alter table 旧表名 rename 新表名；</p>
+<h4 id="举例针对字段常用命令"><a class="markdownIt-Anchor" href="#举例针对字段常用命令">#</a> 举例 (针对字段常用命令)</h4>
+<p>修改字段名</p>
+<p>alter table 表名 change 旧字段名 新字段名 新数据类型；</p>
+<p>添加字段</p>
+<p>alter table &lt;表名&gt; add &lt; 新字段名 &gt; &lt; 数据类型 &gt; [约束条件] [FIRST|AFTER 已存在的字段名]；</p>
+<p>alter table admin add user_name varchar(20)default NULL age int(10) default NULL;</p>
+<p>新字段名为需要添加的字段的名称；</p>
+<p>first 为可选参数，其作用是将新添加的字段设置为表的第一个字段；</p>
+<p>after 为可选参数，其作用是将新添加的字段添加到指定的已存在的字段名的后面；</p>
+<p>default NULL 默认为 NULL。</p>
+<p>删除字段</p>
+<p>alter table 表名 drop 字段名；</p>
+<h3 id="16mysql常见的数据类型"><a class="markdownIt-Anchor" href="#16mysql常见的数据类型">#</a> 1.6：Mysql 常见的数据类型</h3>
+<h4 id="数值类型"><a class="markdownIt-Anchor" href="#数值类型">#</a> 数值类型</h4>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/743ZwQ.png" alt="743ZwQ.png"></p>
+<h4 id="日期和时间类型"><a class="markdownIt-Anchor" href="#日期和时间类型">#</a> 日期和时间类型</h4>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/743QS0.png" alt="743QS0.png"></p>
+<h4 id="字符串类型"><a class="markdownIt-Anchor" href="#字符串类型">#</a> 字符串类型</h4>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/743llV.png" alt="743llV.png"></p>
+<h4 id="mysql整数类型"><a class="markdownIt-Anchor" href="#mysql整数类型">#</a> MYSQL 整数类型</h4>
+<p>MySQL 主要提供的整数类型有 TINYINT、SMALLINT、MEDIUMINT、INT、BIGINT，其属性字段可以添加 AUTO_INCREMENT 自增约束条件。下表中列出了 MySQL 中的数值类型：</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/743UYR.png" alt="743UYR.png"></p>
+<h4 id="mysql小数类型"><a class="markdownIt-Anchor" href="#mysql小数类型">#</a> MYSQL 小数类型</h4>
+<p>浮点类型有两种，分别是单精度浮点数（FLOAT）和双精度浮点数（DOUBLE）：</p>
+<p><img data-src="https://s4.ax1x.com/2022/01/23/743af1.png" alt="743af1.png"></p>
+<h4 id="mysql字符串类型"><a class="markdownIt-Anchor" href="#mysql字符串类型">#</a> MYSQL 字符串类型</h4>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/743RfI.png" alt="743RfI.png"></p>
+<p>VARCHAR 和 TEXT 类型是变长类型，其存储需求取决于列值的实际长度（在前面的表格中用 L 表示），而不是取决于类型的最大可能尺寸。</p>
+<p>例如，一个 VARCHAR (10) 列能保存一个最大长度为 10 个字符的字符串，实际的存储需要字符串的长度 L 加上一个字节以记录字符串的长度。对于字符 “abcd”，L 是 4，而存储要求 5 个字节。</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74346f.png" alt="74346f.png"></p>
+<p>对比结果可以看到，CHAR (4) 定义了固定长度为 4 的列，无论存入的数据长度为多少，所占用的空间均为 4 个字节。VARCHAR (4) 定义的列所占的字节数为实际长度加 1。</p>
+<h3 id="17mysql主键"><a class="markdownIt-Anchor" href="#17mysql主键">#</a> 1.7：Mysql 主键</h3>
+<h4 id="mysql主键primary-key"><a class="markdownIt-Anchor" href="#mysql主键primary-key">#</a> MySQL 主键（PRIMARY KEY）</h4>
+<p>&quot;主键（PRIMARY KEY）“的完整称呼是&quot; 主键约束”。</p>
+<h4 id="选取设置主键约束的字段"><a class="markdownIt-Anchor" href="#选取设置主键约束的字段">#</a> 选取设置主键约束的字段</h4>
+<ul>
+<li>
+<ul>
+<li>主键约束即在表中定义一个主键来唯一确定表中每一行数据的标识符。主键可以是表中的某一列或者多列的组合，其中由多列组合的主键称为复合主键。主键应该遵守下面的规则：每个表只能定义一个主键。</li>
+<li>主键值必须唯一标识表中的每一行，且不能为 NULL，即表中不可能存在两行数据有相同的主键值。这是唯一性原则。</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>一个列名只能在复合主键列表中出现一次。</li>
+<li>复合主键不能包含不必要的多余列。当把复合主键的某一列删除后，如果剩下的列构成的主键仍然满足唯一性原则，那么这个复合主键是不正确的。这是最小化原则。</li>
+</ul>
+</li>
+</ul>
+<h4 id="在创建表时设置主键约束"><a class="markdownIt-Anchor" href="#在创建表时设置主键约束">#</a> 在创建表时设置主键约束</h4>
+<ul>
+<li>
+<ul>
+<li>在 CREATE TABLE 语句中，主键是通过 PRIMARY KEY 关键字来指定的。</li>
+<li>在定义列的同时指定主键，语法规则如下：</li>
+</ul>
+</li>
+</ul>
+<p>字段名 数据类型 PRIMARY KEY；</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/748PAJ.png" alt="748PAJ.png"></p>
+<h4 id="在创建表时设置复合主键"><a class="markdownIt-Anchor" href="#在创建表时设置复合主键">#</a> 在创建表时设置复合主键</h4>
+<ul>
+<li>
+<ul>
+<li>主键由多个字段联合组成，语法规则如下：</li>
+</ul>
+</li>
+</ul>
+<p>PRIMARY KEY [字段 1，字段 2，…, 字段 n]；</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/748FhR.png" alt="748FhR.png"></p>
+<h4 id="在修改表时添加主键约束"><a class="markdownIt-Anchor" href="#在修改表时添加主键约束">#</a> 在修改表时添加主键约束</h4>
+<ul>
+<li>
+<ul>
+<li>在修改数据表时添加主键约束的语法规则为：</li>
+</ul>
+</li>
+</ul>
+<p>ALTER TABLE 表名 ADD PRIMARY KEY (字段名);</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/748ZjK.png" alt="748ZjK.png"></p>
+<h4 id="mysql唯一约束unique-key"><a class="markdownIt-Anchor" href="#mysql唯一约束unique-key">#</a> MySQL 唯一约束（UNIQUE KEY）</h4>
+<p><span class="exturl" data-url="aHR0cDovL2MuYmlhbmNoZW5nLm5ldC9teXNxbC8=">MySQL</span> 唯一约束（Unique Key）要求该列唯一，允许为空，但只能出现一个空值。唯一约束可以确保一列或者几列不出现重复值。</p>
+<p>在定义完列之后直接使用 UNIQUE 关键字指定唯一约束，语法规则如下：</p>
+<p>&lt;字段名&gt; &lt; 数据类型 &gt; UNIQUE</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/748MAH.png" alt="748MAH.png"></p>
+<h4 id="mysql查看表中的约束"><a class="markdownIt-Anchor" href="#mysql查看表中的约束">#</a> MySQL 查看表中的约束</h4>
+<p>查看数据表中的约束语法格式如下：</p>
+<p>SHOW CREATE TABLE &lt;数据表名&gt;;</p>
+<h2 id="2sql之增删改查"><a class="markdownIt-Anchor" href="#2sql之增删改查">#</a> 2：SQL 之增删改查</h2>
+<h3 id="21添加数据"><a class="markdownIt-Anchor" href="#21添加数据">#</a> 2.1：添加数据</h3>
+<h4 id="1为表中所有字段添加数据"><a class="markdownIt-Anchor" href="#1为表中所有字段添加数据">#</a> ①：为表中所有字段添加数据</h4>
+<p>i：INSERT 语句中指定所有字段名</p>
+<p>语法：INSERT INTO 表名 (字段名 1，字段名 2，…) VALUES (值 1，值 2，…);</p>
+<p>例题：向 student 表中插入（id 为 1，姓名：xiaoqiao，年龄：18，性别：woman，生日：2002）数据。</p>
+<p>insert into student(id,name,age,sex,birthday) values(1,“xiaoqiao”,18,“woman”,“2002”);</p>
+<p>ii：INSERT 语句中不指定字段名</p>
+<p>语法：INSERT INTO 表名 VALUES (值 11，值 2，…);</p>
+<p>例题：向 student 表中插入（id 为 2，姓名：daqiao，年龄：20，性别：woman，生日：2004）数据。</p>
+<p>insert into student values(2,“daqiao”,20,“woman”,“2000”);</p>
+<h4 id="2为表的指定字段添加数据"><a class="markdownIt-Anchor" href="#2为表的指定字段添加数据">#</a> ②：为表的指定字段添加数据</h4>
+<p>i：为指定字段添加数据，即只向部分字段添加值，而其它字段的值为表定义时的默认值。</p>
+<p>语法：INSERT INTO 表名（字段 1，字段 2，…）VALUES (值 1，值 2，…);</p>
+<p>例题：向 student 表中插入（id 为 3，姓名：zhouyu，年龄：18，）数据。</p>
+<p>insert into student(id,name,age) values(3,“xaoqiao”,18);</p>
+<h4 id="3同时添加多条数据"><a class="markdownIt-Anchor" href="#3同时添加多条数据">#</a> ③：同时添加多条数据</h4>
+<p>语法：INSERT INTO 表名 (字段名 1，字段名 2，…) VALUES （值 1，值 2，…),(值 1，值 2);</p>
+<p>例题：向 student 表中插入（id 为 4，姓名：sunce，年龄：20，性别：man，生日：2004）和（id 为 5，姓名：caocao，年龄：20，性别：man，生日：2004）数据</p>
+<p>insert into student values(4,“sunce”,20,“man”,“2000”),(5,“caocao”,20,“man”,“2000”);</p>
+<h3 id="22删除数据"><a class="markdownIt-Anchor" href="#22删除数据">#</a> 2.2：删除数据</h3>
+<h4 id="1删除部分数据"><a class="markdownIt-Anchor" href="#1删除部分数据">#</a> ①：删除部分数据</h4>
+<p>i：即删除指定的部分数据，需要使用 WHERE 子句来指定删除记录的条件。</p>
+<p>语法：DELETE FROM 表名 WHERE 条件表达式；</p>
+<p>例题：向 student 表中删除 id 为 1 的数据。</p>
+<p>delete from student where id=1;</p>
+<h4 id="2删除全部数据"><a class="markdownIt-Anchor" href="#2删除全部数据">#</a> ②：删除全部数据</h4>
+<p>i：若 DELETE 语句中没有使用 WHERE 语句，则会将表中所有记录都删除。</p>
+<p>语法：DELETE FROM 表名；</p>
+<p>例题：向 student 表中删除所有的数据。</p>
+<p>delete from student ;</p>
+<h3 id="23修改数据"><a class="markdownIt-Anchor" href="#23修改数据">#</a> 2.3：修改数据</h3>
+<h4 id="1update-更新部分数据"><a class="markdownIt-Anchor" href="#1update-更新部分数据">#</a> ①：UPDATE 更新部分数据</h4>
+<p>i：指更新指定表中的指定记录，使用 WHERE 子句来指定。</p>
+<p>语法：UPDATE 表名 SET 字段名 1 = 值 1，[，字段名 2 = 值 2，…] [ WHERE 条件表达式 ]；</p>
+<p>例题：向 student 表中 id 为 1 的数据中字段 age 改为 16，字段 birthday 改为 2004。</p>
+<p>update student set age=16,birthday=2004 where id=1;</p>
+<h4 id="2update-更新全部数据"><a class="markdownIt-Anchor" href="#2update-更新全部数据">#</a> ②：UPDATE 更新全部数据</h4>
+<p>i：若 UPDATE 语句中没有使用 WHERE 语句，则会将表中所有记录都删除。</p>
+<p>语法：UPDATE FROM 表名；</p>
+<p>例题：向 student 表中将 age 字段都该为 17。</p>
+<p>update student set age=17;</p>
+<h3 id="24查询数据"><a class="markdownIt-Anchor" href="#24查询数据">#</a> 2.4：查询数据</h3>
+<h4 id="1简单查询"><a class="markdownIt-Anchor" href="#1简单查询">#</a> ①：简单查询</h4>
+<p>i：查询所有字段</p>
+<p>语法：SELECT 字段名 1，字段名 2，…FROM 表名；</p>
+<p>例题：查询 student 表中所有数据。</p>
+<p>SELECT id,name,age ,sex,birthday FROM student;</p>
+<p>select * from student;</p>
+<p>ii：查询指定的部分字段</p>
+<p>语法：SELECT 字段名 1，字段名 2，… FROM 表名；</p>
+<p>例题：查询 student 表中所有的 name 字段和 sex 字段。</p>
+<p>SELECT name,sex FROM student;</p>
+<p>注意：字段顺序可以更改，则显示的结果也会作出对应的调整。</p>
+<h4 id="2按条件查询"><a class="markdownIt-Anchor" href="#2按条件查询">#</a> ②：按条件查询</h4>
+<ol>
+<li>
+<ol>
+<li>带关系运算符的查询</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT 字段名 1，字段名 2，…FROM 表名 WHERE 条件表达式；</p>
+<p>例题：查询 student 表中 id 为 4 的人的 id 和 name 字段。</p>
+<p>SELECT id,name FROM student WHERE id=4;</p>
+<ol>
+<li>
+<ol>
+<li>带 IN 关键字的查询</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT * 字段名 1, 字段名 2,…FROM 表名 WHERE 字段名 [NOT] IN （元素 1，元素 2，…）；</p>
+<p>解释：IN 关键字用于判断某个字段的值是否在指定集合中，若在，则该字段所在的记录将会被查询出来</p>
+<p>例题：查询 student 表中 id 值为 1,2,3 的记录。</p>
+<p>SELECT * FROM student WHERE id IN (1,2,3);</p>
+<ol>
+<li>
+<ol>
+<li>带 BETWEEN AND 关键字的查询</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT * {字段名 1, 字段名 2,… FROM 表名 WHERE 字段名 [ NOT] BETWEEN 值 1 AND 值 2；</p>
+<p>解释：BETWEEN AND 用于判断某个字段的值是否在指定范围之内，若在，则该字段所在的记录会被 查询出来，反之不会。</p>
+<p>例题：查询 student 表中 id 值在 2~5 之间的人的 id 和 name。</p>
+<p>SELECT id,name FROM student WHERE id BETWEEN 2 AND 5;</p>
+<ol>
+<li>
+<ol>
+<li>空值查询</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT * 字段名 1，字段名 2，…FROM 表名 WHERE 字段名 IS [NOT] NULL</p>
+<p>解释：在数据表中有些值可能为空值（NULL），空值不同于 0，也不同于空字符串，需要使用 IS NULL 来判断字段的值是否为空值。</p>
+<p>例题：查询 student 表中 sex 值为空值的记录。</p>
+<p>SELECT * FROM student WHERE sex IS NULL;</p>
+<p>注意：IS NOT NULL 关键字用来查询字段不为空值的记录。</p>
+<ol>
+<li>
+<ol>
+<li>带 DISTINCT 关键字的查询</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT DISTINCT 字段名 FROM 表名；</p>
+<p>解释：很多表中某些字段的数据存在重复的值，可以使用 DISTINCT 关键字来过滤重复的值，只保留一个值。</p>
+<p>例题：查询 student 表中 birthday 字段的值，结果中不允许出行重复的值。</p>
+<p>SELECT DISTINCT birthday FROM student;</p>
+<ol>
+<li>
+<ol>
+<li>带 LIKE 关键字的查询</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>
+<ol>
+<li>百分号（%）通配符</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT * | 字段名 1，字段名 2，…FROM 表名 WHERE 字段名 [NOT] LIKE ‘匹配字符串’;</p>
+<p>解释：匹配任意长度的字符串，包括空字符串。例如，字符串 “c%” 匹配以字符 C 开始，任意长度的字符串，如 “ ct ”，“ cut ”，“ current ” 等；字符串 “ c% g ” 表示以字符 c 开始，以 g 结尾的字符串；字符串 “ % y% ” 表示包含字符 “ y ” 的字符串，无论 “ y ” 在字符串的什么位置。</p>
+<p>例题：查询 student 表中 name 字段以字符 “s” 开头的人的 id,name。</p>
+<p>SELECT id,name FROM student WHERE name LIKE “s%”;</p>
+<ol>
+<li>
+<ol>
+<li>
+<ol>
+<li>下划线（_）通配符</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT * | 字段名 1，字段名 2，…FROM 表名 WHERE 字段名 [NOT] LIKE ‘匹配字符串’;</p>
+<p>解释：下划线通配符只匹配单个字符，若要匹配多个字符，需要使用多个下划线通配符。例如，字符串 “cu_” 匹配以字符串 “ cu ” 开始，长度为 3 的字符，如 “ cut ”，“ cup ”；字符串 “ c_ <em>l” 匹配在 “c” 和 “ l ” 之间包含两个字符的字符串，如 “ cool ”。需要注意的是，连续的 “</em>” 之间不能有空格，例如 “M_ _QL” 只能匹配 “MySQL”，不能匹配 “My SQL”。</p>
+<p>例题：查询 student 表中 name 字段值以 “xia” 开始，以 “ qiao ” 结束，并且中间只有一个字符的记录。</p>
+<p>SELECT * FROM student WHERE name LIKE ‘xia_qiao’;</p>
+<p>注意：若要查询的字段值本来就含有 “%” 或者 “ _ ”, 则要用 “ \ ” 进行转义，如要查询本身含有 “ % ” 的字符串，命令应改为 “ %%%”。</p>
+<ol>
+<li>
+<ol>
+<li>带 AND 关键字的多条件查询</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT * | 字段名 1，字段名 2，…FROM 表名；</p>
+<p>解释：在使用 SELECT 语句查询数据时，优势为了使查询结果更加精确，可以使用多个查询条件，如使用 AND 关键字可以连接两个或多个查询条件。</p>
+<p>例题：查询 student 表中 id 字段小于 5，并且 sex 字段值为 “woman” 的人的 id 和 name</p>
+<p>SELECT id,name FROM student WHERE id&lt;5 AND sex=‘woman’;</p>
+<ol>
+<li>
+<ol>
+<li>带 OR 关键字的多条件查询</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT * | 字段名 1，字段名 2，…FROM 表名 WHERE 条件表达式 1 OR 条件表达式 2 [… OR 条件表达式 n];</p>
+<p>解释：与 AND 关键字不同，OR 关键字只要满足任意一个条件就会被查询出来。</p>
+<p>例题：查询 student 表中 id 字段小于 5，或者 sex 字段值为 “woman” 的人的 id 和 name</p>
+<p>SELECT id,name FROM student WHERE id&lt;5 OR sex=‘woman’;</p>
+<ol>
+<li>
+<ol>
+<li>OR 和 AND 一起使用的情况</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT * | 字段名 1，字段名 2，…FROM 表名；</p>
+<p>解释：OR 和 AND 一起使用的时候，AND 的优先级高于 OR，因此二者一起使用时，会先运算 AND 两边的表达式，再运算 OR 两边的表达式。</p>
+<p>例题：查询 student 表中 sex 值为 “woman” 或者 sex 值为 “man” 并且 age 字段值为 16 的人的记录</p>
+<p>SELECT * FROM student WHERE sex=‘woman’ OR sex=‘man’ AND age=16;</p>
+<h4 id="3聚合函数"><a class="markdownIt-Anchor" href="#3聚合函数">#</a> ③：聚合函数</h4>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/748wNj.png" alt="748wNj.png"></p>
+<ol>
+<li>
+<ol>
+<li>COUNT () 函数：统计记录的条数</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT COUNT (*) FROM 表名；</p>
+<p>例题：查询 student 表中一共有多少条记录。</p>
+<p>SELECT COUNT(*) FROM student;</p>
+<ol>
+<li>
+<ol>
+<li>SUM () 函数：求出表中某个字段所有值的总和</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT SUM (字段名) FROM 表名；</p>
+<p>例题：查询 student 表中 age 字段的总和</p>
+<p>SELECT SUM(age) FROM student;</p>
+<ol>
+<li>
+<ol>
+<li>AVG () 函数：求出表中某个字段所有值的平均值</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT AVG (字段名) FROM 表名；</p>
+<p>例题：查询 student 表中表中 age 字段的平均值。</p>
+<p>SELECT AVG(age) FROM student;</p>
+<ol>
+<li>
+<ol>
+<li>MAX () 函数：求出表中某个字段所有值的最大值</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT MAX (字段名) FROM 表名；</p>
+<p>例题：查询 student 表中 age 字段的最大值</p>
+<p>SELECT MAX(age) FROM student;</p>
+<ol>
+<li>
+<ol>
+<li>MIN () 函数：求出表中某个字段所有值的最小值</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT MIN (字段名) FROM 表名；</p>
+<p>例题：查询 student 表中 grade 字段的最小值</p>
+<p>SELECT MIN(age) FROM student;</p>
+<h4 id="4对查询结果进行排序-重点"><a class="markdownIt-Anchor" href="#4对查询结果进行排序-重点">#</a> ④：对查询结果进行排序  （重点）</h4>
+<ol>
+<li>
+<ol>
+<li>带 ORDER BY 关键字的排序</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT 字段名 1，字段名 2，…FROM 表名 ORDER BY 字段名 1 [ASC | DESC], 字段名 2 [ ASC | DESC ]…;</p>
+<p>解释：在该语法中指定的字段名是对查询结果进行排序的依据，ASC 表示升序排列，DESC 表示降序排列，默认情况是升序排列。</p>
+<p>例题：查询 student 表中的所有记录，并按照 age 字段进行升序排序</p>
+<p>SELECT * FROM student ORDER BY age;</p>
+<ol>
+<li>
+<ol>
+<li>带 GROUP BY 关键字的分组查询</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT 字段名 1，字段名 2，…FROM 表名 GROUP BY 字段名 1，字段名 2，… [HAVING 条件表达式];</p>
+<p>解释：在对表中数据进行统计的时候，可以使用 GROUP BY 按某个字段或者多个字段进行分组，字段中值相同的为一组，如男生分为一组，女生分为一组。</p>
+<p><strong>注意点使用 * 无法查询解决方法：</strong></p>
+<p><strong>1. 关闭 ONLY_FULL_GROUP_BY</strong></p>
+<p>** 查询：**SELECT @@sql_mode;</p>
+<p>** 关闭：**SET SESSION sql_mode=(SELECT REPLACE (@@sql_mode,‘ONLY_FULL_GROUP_BY,’,’’));</p>
+<ol>
+<li>
+<ol>
+<li>
+<ol>
+<li>单独使用 GROUP BY 进行分组</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>解释：单独使用 GROUP BY 关键字，查询的是每个分组中的一条记录。</p>
+<p>例题：查询 student 表中的数据，按照 sex 字段进行分组</p>
+<p>SELECT * FROM student GROUP BY sex;</p>
+<ol>
+<li>
+<ol>
+<li>
+<ol>
+<li>GROUP BY 和聚合函数一起使用</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>解释：GROUP BY 和聚合函数一起使用，可以统计出某个或者某些字段在一个分组中的最大值、最小值、平均值等。</p>
+<p>例题：查询 student 表中按照 age 字段进行分组查询，计算出每组共有多少个人。</p>
+<p>SELECT COUNT(*) ,age FROM student GROUP BY age;</p>
+<ol>
+<li>
+<ol>
+<li>
+<ol>
+<li>GROUP BY 和 HAVING 关键字一起使用</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>解释：关键 HAVING 字和 WHERE 关键字的作用相同，区别在于 HAVING 关键字可以跟聚合函数，而 WHERE 关键字不能。通常 HAVING 关键字都和 GROUP BY 一起使用，用于对分组后的结果进行过滤。</p>
+<p>例题：查询 student 表中按照 sex 字段进行分组查询，查询出 age 字段值之和小于 300 的分组</p>
+<p>SELECT sum(age),sex FROM student GROUP BY sex HAVING SUM(age) &lt; 300;</p>
+<ol>
+<li>
+<ol>
+<li>使用 LIMIT 限制查询结果的数量</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT 字段名 2，字段名 2，…FROM 表名 LIMIT 记录数 [OFFSET] 记录数 LIMIT Y OFFSET X 向后偏移 x 位。</p>
+<p>解释：在此语法中，LIMIT 后面可以跟两个参数，第一个参数 “OFFSET” 表示偏移量，如果偏移量为 0，则从查询结果的第一条记录开始，偏移量为 1 则从查询结果中的第二条记录开始，以此类推。OFFSET 为可选值，默认值为 0，第二个参数 “记录数” 表示指定返回查询记录的条数。</p>
+<p>例题：查询 tudent 表中的前四条记录</p>
+<p>SELECT * FROM student LIMIT 4;</p>
+<p>例题：查询 student 表中从 0 开始查询 4 条记录</p>
+<p>SELECT * FROM student LIMIT 0,4;</p>
+<h4 id="5为表和字段取别名"><a class="markdownIt-Anchor" href="#5为表和字段取别名">#</a> ⑤：为表和字段取别名</h4>
+<ol>
+<li>
+<ol>
+<li>为表取别名</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT * FROM 表名 [AS] 别名；</p>
+<p>解释：在进行查询操作时，如果表名很长使用起来不方便，可以为表取一个别名来代替表的名称。</p>
+<p>例题：为 student 表起一个别名 s，并查询 student 表中 sex 字段值为 “woman” 的记录</p>
+<p>SELECT * FROM student AS s WHERE s.sex=‘woman’;</p>
+<ol>
+<li>
+<ol>
+<li>为字段取别名</li>
+</ol>
+</li>
+</ol>
+<p>语法：SELECT 字段名 [AS] 别名 [ , 字段名 [AS] 别名，…] FROM 表名 ；</p>
+<p>例题：查询 student 表中的所有记录的 name 和 sex 字段值，并为这两个字段起别名 stu_name 和 stu_sex</p>
+<p>SELECT name AS stu_name,sex AS stu_gender FROM student;</p>
+<h4 id="6子查询"><a class="markdownIt-Anchor" href="#6子查询">#</a> ⑥：子查询</h4>
+<p>select name from student where id &lt; (select age from student where name=‘sunce’);</p>
+<h4 id="7联合查询union"><a class="markdownIt-Anchor" href="#7联合查询union">#</a> ⑦：联合查询 (union)</h4>
+<p>select version() union select user();</p>
+<h4 id="8利用内置表查询"><a class="markdownIt-Anchor" href="#8利用内置表查询">#</a> ⑧：利用内置表查询</h4>
+<p>查询数据库：select schema_name from information_schema.schemata;</p>
+<p>查询表名：select table_name from information_schema.tables;</p>
+<p>查询列名：select column_name from information_schema.columns;</p>
+<h2 id="3mysql内置库"><a class="markdownIt-Anchor" href="#3mysql内置库">#</a> 3：MySQL 内置库</h2>
+<p>在 MySQL&gt;5.0 的版本中，把 information_schema 看作是一个自带的内置数据库，确切说是信息数据库。它保存着关于 MySQL 服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/748Tv6.png" alt="748Tv6.png"></p>
+<p>这里我们重点学习下 schemata、tables、columns 以及相关的字段名。</p>
+<p>schemata 表：这里重点关注 schema_name 这个字段，它存放着所有数据库库名，在 SQL 注入中我们可以使用它来进行来查询所有数据库，然后进行高权限的跨库查询。</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/748xPA.png" alt="748xPA.png"></p>
+<p>tables 表：tables 表用来存储所有数据库里的表名等信息，其中 table_schema 列用来存放所有数据库的库名，table_name 用来存放 MySQL 数据库中的所有表名。</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74GCKf.png" alt="74GCKf.png"></p>
+<p>columns 表：columns 表用来存放数据库里的所有字段信息，其中 table_schema 列用来存放数据库库名，table_name 列用来存放所有数据库里的所有表名，column_name 列用来存放所有的字段 / 内容 (值)。</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74GAaQ.png" alt="74GAaQ.png"></p>
+<h2 id="4sql中tips"><a class="markdownIt-Anchor" href="#4sql中tips">#</a> 4：SQL 中 tips</h2>
+<h3 id="41符号运用"><a class="markdownIt-Anchor" href="#41符号运用">#</a> 4.1：符号运用</h3>
+<p>= 				数据库的赋值符号</p>
+<p>or/||  			逻辑或 左右两边有一条成立 那么返回 true 否则 false</p>
+<p>xor 				逻辑异或。 如果任一操作数为 NULL，则返回 NULL。 对于非 NULL 操作数，如果奇数个操作数非零，则求值为 1，否则返回 0。</p>
+<p>&amp;&amp;/And 			逻辑与，并且的意思 左右两边的条件必须同时成立则返回 true 否则返回 false</p>
+<p>NOT/！ 			逻辑非</p>
+<p>+、-、*、/ 		运算符 加减乘除</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74Gnx0.png" alt="74Gnx0.png"></p>
+<h3 id="42常用注释符"><a class="markdownIt-Anchor" href="#42常用注释符">#</a> 4.2：常用注释符</h3>
+<p><strong>在 MySQL 中，常见的注释符有以下几种：</strong></p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>#</li>
+<li>–空格</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>/**/</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>内联注释符及特性：</strong></p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>/*！code */</li>
+<li>内联注释符是一种基于注块注释衍生出来的注释风格，它可以用于整个 SQL 语句中，用来执行 SQL 语句，内联注释有个特殊点，和 MySQL 版本息息相关，也就是 **：** 当内联注释中出现小于或等于当前版本号的时候，内联注释符里的子句会被执行，大于时则不会被执行，注意版本的写法，例如，5.5.34，在内联注释中需要写为 50534，版本号第二位加 0，然后注意版本号和内联注释中间不能有空格。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>常见的空格符号：</strong></p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>两个空格代替一个空格，用 Tab 代替空格，%0a = 空格</li>
+<li>%20 (空格) %09 (tab) %0a (回车符) %0b %0c %0d % a0 (空格) %00 /**//<em>!</em>/</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="43内联注释"><a class="markdownIt-Anchor" href="#43内联注释">#</a> 4.3：内联注释</h3>
+<p>select user()/<em>!version()</em>/;</p>
+<h3 id="44常见空格表示符号"><a class="markdownIt-Anchor" href="#44常见空格表示符号">#</a> 4.4：常见空格表示符号</h3>
+<p>两个空格代替一个空格，用 Tab 代替空格，%0a = 空格</p>
+<p>%20 %09 %0a %0b %0c %0d %a0 %00 /**/ /<em>!</em>/</p>
+<h2 id="5注入中常见的sql函数"><a class="markdownIt-Anchor" href="#5注入中常见的sql函数">#</a> 5：注入中常见的 sql 函数</h2>
+<h4 id="51rand函数-生成一个0~1之间的随机数"><a class="markdownIt-Anchor" href="#51rand函数-生成一个0~1之间的随机数">#</a> 5.1：rand () 函数 // 生成一个 0~1 之间的随机数</h4>
+<p>语句：select rand ();</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74GveU.png" alt="74GveU.png"></p>
+<h4 id="52floor函数-向下取整"><a class="markdownIt-Anchor" href="#52floor函数-向下取整">#</a> 5.2：floor () 函数 // 向下取整</h4>
+<p>语句：select floor (rand ()*2);</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74JCWR.png" alt="74JCWR.png"></p>
+<h4 id="53concat函数-将符合条件的同一列中的不同行数据进行拼接选择好数据库"><a class="markdownIt-Anchor" href="#53concat函数-将符合条件的同一列中的不同行数据进行拼接选择好数据库">#</a> 5.3：concat () 函数 // 将符合条件的同一列中的不同行数据进行拼接，选择好数据库</h4>
+<p>语句：concat (0x3a,database (),0x3a)；0x3a 为：号</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74JiS1.png" alt="74JiS1.png"></p>
+<h4 id="54concat_ws函数-第一个参数是其它参数的分隔符-分隔符的位置在连接的两个字符串之间"><a class="markdownIt-Anchor" href="#54concat_ws函数-第一个参数是其它参数的分隔符-分隔符的位置在连接的两个字符串之间">#</a> 5.4：concat_ws () 函数 // 第一个参数是其它参数的分隔符。分隔符的位置在连接的两个字符串之间。</h4>
+<p>语句：select concat_ws (’!’,database (),‘haha’);</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74JFQx.png" alt="74JFQx.png"></p>
+<h4 id="55group_concat"><a class="markdownIt-Anchor" href="#55group_concat">#</a> 5.5：group_concat</h4>
+<p>语句：select group_concat (username,’~’,password) from dh_admin_user;</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74JZwD.png" alt="74JZwD.png"></p>
+<h4 id="56extractvalue函数-对xml文档进行查询的函数-语法extractvalue目标xml文档xml路径"><a class="markdownIt-Anchor" href="#56extractvalue函数-对xml文档进行查询的函数-语法extractvalue目标xml文档xml路径">#</a> 5.6：extractvalue () 函数 // 对 xml 文档进行查询的函数 语法：extractvalue (目标 xml 文档，xml 路径).</h4>
+<p>语句：select extractvalue (‘anything’,concat (’~’,(select user ())));</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74JGm8.png" alt="74JGm8.png"></p>
+<h4 id="57sleep函数-对数据库进行延时的函数-语法后面直接跟需要延时的时间即可默认单位为s"><a class="markdownIt-Anchor" href="#57sleep函数-对数据库进行延时的函数-语法后面直接跟需要延时的时间即可默认单位为s">#</a> 5.7：sleep () 函数 // 对数据库进行延时的函数 语法：后面直接跟需要延时的时间即可，默认单位为 s</h4>
+<p>语句：select sleep (5);</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74JUYj.png" alt="74JUYj.png"></p>
+<h4 id="58updatexml-语法updatexml目标xml文档xml路径更新的内容"><a class="markdownIt-Anchor" href="#58updatexml-语法updatexml目标xml文档xml路径更新的内容">#</a> 5.8：updatexml () // 语法 updatexml (目标 xml 文档，xml 路径，更新的内容)</h4>
+<p>语句：select updatexml (‘anything’,concat (’~’,(select version ())),‘xxx’);</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74J67F.png" alt="74J67F.png"></p>
+<h4 id="59exp函数-此函数返回e自然对数的底的x次方的值用于将e提升为指定数字的幂当传递一个大于709的值时函数exp就会引起一个溢出错误"><a class="markdownIt-Anchor" href="#59exp函数-此函数返回e自然对数的底的x次方的值用于将e提升为指定数字的幂当传递一个大于709的值时函数exp就会引起一个溢出错误">#</a> 5.9：exp () 函数 // 此函数返回 e (自然对数的底) 的 X 次方的值，用于将 E 提升为指定数字的幂，当传递一个大于 709 的值时，函数 exp () 就会引起一个溢出错误。</h4>
+<p>语句：select exp (2);</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74Jh11.png" alt="74Jh11.png"></p>
+<h4 id="510length函数-返回参数的长度"><a class="markdownIt-Anchor" href="#510length函数-返回参数的长度">#</a> 5.10：length () 函数 // 返回参数的长度</h4>
+<p>语句：select length (user ());</p>
+<p>[<img data-src="https://s4.ax1x.com/2022/01/23/74JonK.png" alt="74JonK.png"></p>
+<h4 id="511substr函数-从字符串-s-的-start-位置截取长度为-length-的子字符串select-substruser12"><a class="markdownIt-Anchor" href="#511substr函数-从字符串-s-的-start-位置截取长度为-length-的子字符串select-substruser12">#</a> 5.11：substr () 函数 // 从字符串 s 的 start 位置截取长度为 length 的子字符串，select substr (user (),1,2);</h4>
+<p>语句：select substr (user (),1,2);</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/01/1f1f4e8fa9ad82c2.png" alt=""></p>
+<h4 id="512substring函数left-mid函数-同substr"><a class="markdownIt-Anchor" href="#512substring函数left-mid函数-同substr">#</a> 5.12：substring () 函数，left () ,mid () 函数 // 同 substr</h4>
+<p>语句：select substring (user (),1,2);</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/01/c6c11c7443e7c1db.png" alt=""></p>
+<p>语句：select left (user (),5);</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/01/4a155d76b15de60a.png" alt=""></p>
+<p>语法：select mid (user (),1);</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/01/fbeeb1d7f33c725d.png" alt=""></p>
+<h4 id="513ascii-ord函数返回第一个字符的ascii码-返回字符的ascii码"><a class="markdownIt-Anchor" href="#513ascii-ord函数返回第一个字符的ascii码-返回字符的ascii码">#</a> 5.13：ascii ()、ord () 函数返回第一个字符的 ascii 码 // 返回字符的 ascii 码</h4>
+<p>语句：select ascii (mid (user (),1));</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/01/4d224b3c951d2cfd.png" alt=""></p>
+<p>语句：select ord (mid (user (),1));</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/01/4a694682248265c8.png" alt=""></p>
+<h4 id="514name_const函数-构造一个临时列列名为xx值为xx"><a class="markdownIt-Anchor" href="#514name_const函数-构造一个临时列列名为xx值为xx">#</a> 5.14：name_const () 函数 // 构造一个临时列，列名为 xx, 值为 xx</h4>
+<p>语句：select name_const (‘name’,15);</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/01/2464d00490f0b0fe.png" alt=""></p>
+<h4 id="515strcmp函数-strcmp函数是string-compare字符串比较的缩写用于比较两个字符串并根据比较结果返回整数-基本形式为strcmpstr1str2若str1str2则返回零若str1str2则返回负数若str1str2则返回正数"><a class="markdownIt-Anchor" href="#515strcmp函数-strcmp函数是string-compare字符串比较的缩写用于比较两个字符串并根据比较结果返回整数-基本形式为strcmpstr1str2若str1str2则返回零若str1str2则返回负数若str1str2则返回正数">#</a> 5.15：strcmp () 函数 //strcmp 函数是 string compare (字符串比较) 的缩写，用于比较两个字符串并根据比较结果返回整数。基本形式为 strcmp (str1,str2)，若 str1=str2，则返回零；若 str1&lt;str2，则返回负数；若 str1&gt;str2，则返回正数</h4>
+<p>​	语句：select strcmp (version (),user ());</p>
+<p><img data-src="https://s3.bmp.ovh/imgs/2022/01/e2eaa534134f9b87.png" alt=""></p>
+<h4 id="516ifabc-如果a为真则返回b否则返回c"><a class="markdownIt-Anchor" href="#516ifabc-如果a为真则返回b否则返回c">#</a> 5.16：if (a,b,c) // 如果 a 为真，则返回 b，否则返回 c</h4>
+<p>语句：select if (length (database ())=5,1,0);</p>
+<p><img data-src="https://www.tupians.top/imgs/2022/01/b8b9deef86562b2b.png" alt=""></p>
+<h4 id="517benchmarkcountexpr-重复计算expr表达式count次"><a class="markdownIt-Anchor" href="#517benchmarkcountexpr-重复计算expr表达式count次">#</a> 5.17：BENCHMARK (count,expr) // 重复计算 expr 表达式 count 次</h4>
+<p>语句：select benchmark (5,1);</p>
+<p>执行表达式 expr count 次，返回的结果都是 0。看返回结果是没有任何意义的，它的意义在于可以得到计算 count 次表达式 expr 后所需要的时间。表达式可以是 sql 语句，这样就可以看出一个 sql 语句写出来后效率怎么样，从而进行一定的优化。</p>
+<p><img data-src="https://www.tupians.top/imgs/2022/01/fb0584cc69c11867.png" alt=""></p>
+<h4 id="518locate函数-locatesubstrstr返回substr字符串在str中出现的位置没有返回0"><a class="markdownIt-Anchor" href="#518locate函数-locatesubstrstr返回substr字符串在str中出现的位置没有返回0">#</a> 5.18：locate () 函数 //locate (substr,str) 返回 substr 字符串在 str 中出现的位置，没有返回 0</h4>
+<p>语句：select locate (‘r’,user ());</p>
+<p><img data-src="https://www.tupians.top/imgs/2022/01/432658a44436132d.png" alt=""></p>
+<h4 id="519position函数-positionsubstr-in-str返回substr字符串在str中出现的位置没有返回0"><a class="markdownIt-Anchor" href="#519position函数-positionsubstr-in-str返回substr字符串在str中出现的位置没有返回0">#</a> 5.19：position () 函数 //position (substr in str) 返回 substr 字符串在 str 中出现的位置，没有返回 0</h4>
+<p>语句：select position (‘r’ in user ());</p>
+<p><img data-src="https://www.tupians.top/imgs/2022/01/ef87b8a6a5c63583.png" alt=""></p>
+<h4 id="520instr函数-instrstrsubstr返回substr字符串在str中出现的位置与locate相同只是参数顺序相反"><a class="markdownIt-Anchor" href="#520instr函数-instrstrsubstr返回substr字符串在str中出现的位置与locate相同只是参数顺序相反">#</a> 5.20：instr () 函数 //instr (str,substr) 返回 substr 字符串在 str 中出现的位置，与 locate 相同，只是参数顺序相反</h4>
+<p>​	语句：select instr (‘qweasdzXC’,‘w’);</p>
+<p><img data-src="https://www.tupians.top/imgs/2022/01/8314d36cb264ebd3.png" alt=""></p>
+<h4 id="521hexunhex函数"><a class="markdownIt-Anchor" href="#521hexunhex函数">#</a> 5.21：hex ()&amp;unhex () 函数</h4>
+<p>渗透中有些注入点因为数据库中对数据字段的类型定义，可能不支持 union 来显示某些不同类型的内容，所以使用 hex 对数据进行十六进制编码；</p>
+<p>hex 参数可用于任何参数外面</p>
+<p>select hex(concat(user(),1));</p>
+<p>select hex(user()),hex(database())；</p>
+<p>unhex () 则是用来将十六进制的内容转换回十进制</p>
+<p>select unhex(‘726F6F74406C6F63616C686F737431’);</p>
+<h4 id="522load_file函数"><a class="markdownIt-Anchor" href="#522load_file函数">#</a> 5.22：load_file () 函数</h4>
+<p>load_file () 函数是 MySQL 读取本地 / 远程文件的函数</p>
+<p>前提条件：</p>
+<ul>
+<li>
+<ul>
+<li>必须有权限读取且文件是可读的，低权限无法读取高权限用户文件</li>
+<li>被文件必须在服务器上</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>必须知道文件的绝对路径 可用：select @@basedir;</li>
+<li>读取的文件必须小于设定：max_allowed_packet</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>secure_file_priv 的值不为 NULL 使用 show global variables like ‘% secure%’; 查询是否为空，在 my.ini 设置为：secure_file_priv = ‘’</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>查询结果为：secure_file_priv NULL 时，表示不允许导入导出；</li>
+<li>查询结果为：secure_file_priv /xxx/ 时，表示只允许在当前目录导入导出；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>查询结果为：secure_file_priv（空白）时，表示可以在任意目录进行导入导出；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Windows：my.ini 中添加 secure_file_priv=</p>
+<p>Linux：/etc/my.cnf 的 [mysqld] 下面添加 local-infile=0</p>
+<p>语法：select load_file (‘D:/phpstudy_pro/Extensions/MySQL5.7.26/my.ini’);</p>
+<h4 id="523into-outfile函数"><a class="markdownIt-Anchor" href="#523into-outfile函数">#</a> 5.23：into outfile () 函数</h4>
+<p>into outfile () 函数是用来导出文件的</p>
+<p>用法示例：select “hello word” into outfile ‘D:\phpstudy_pro\WWW\1.txt’;</p>
+<p>注意：</p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>在 SQL 注入时，我们可以利用 load_file 或者 into outfile () 对文件进行读取，或者写入 Webshell；</li>
+<li>若过滤了单引号，则可以将函数中的字符进行 hex 编码。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2022-01-23 11:13:15" itemprop="dateModified" datetime="2022-01-23T11:13:15+08:00">2022-01-23</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/admin.png" alt="da xian 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/admiw.png" alt="da xian 支付宝">
+        <p>支付宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>da xian <i class="ic i-at"><em>@</em></i>Hexo
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2022/01/23/daxian%201.5/" title="第五天：MySQL语法">http://example.com/2022/01/23/daxian 1.5/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2022/01/20/daxian%201.4/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciszlczyj20zk0m816d.jpg" title="第四天：WEB站点搭建">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>第四天：WEB站点搭建</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E5%A0%82%E5%AF%BC%E5%AD%A6"><span class="toc-number">1.</span> <span class="toc-text"> 课堂导学：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text"> 知识框架：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E5%B8%B8%E8%A7%81%E7%9A%84sql%E8%AF%AD%E5%8F%A5"><span class="toc-number">3.</span> <span class="toc-text"> 1：常见的 SQL 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11sql%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.1.</span> <span class="toc-text"> 1.1：SQL 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12sql%E7%89%B9%E7%82%B9"><span class="toc-number">3.2.</span> <span class="toc-text"> 1.2：SQL 特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-number">3.3.</span> <span class="toc-text"> 1.3：数据库操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.3.1.</span> <span class="toc-text"> 连接数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%80%E5%87%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.3.2.</span> <span class="toc-text"> 退出数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">3.3.3.</span> <span class="toc-text"> 注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14%E5%B8%B8%E7%94%A8%E7%9A%84sql%E8%AF%AD%E5%8F%A5"><span class="toc-number">3.4.</span> <span class="toc-text"> 1.4：常用的 SQL 语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E5%AD%97%E6%AE%B5%E7%9A%84%E8%BF%90%E7%94%A8"><span class="toc-number">3.5.</span> <span class="toc-text"> 1.5：数据库表，字段的运用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8"><span class="toc-number">3.5.1.</span> <span class="toc-text"> 数据库表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-dml-%E5%92%8C-ddl"><span class="toc-number">3.5.2.</span> <span class="toc-text"> SQL DML 和 DDL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-%E7%9A%84-dml-%E9%83%A8%E5%88%86"><span class="toc-number">3.5.3.</span> <span class="toc-text"> SQL 的 DML 部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-dml-%E5%92%8C-ddl-2"><span class="toc-number">3.5.4.</span> <span class="toc-text"> SQL DML 和 DDL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-number">3.5.5.</span> <span class="toc-text"> 创建表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B%E9%92%88%E5%AF%B9%E8%A1%A8%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">3.5.6.</span> <span class="toc-text"> 举例 (针对表常用命令)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B%E9%92%88%E5%AF%B9%E5%AD%97%E6%AE%B5%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">3.5.7.</span> <span class="toc-text"> 举例 (针对字段常用命令)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16mysql%E5%B8%B8%E8%A7%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.6.</span> <span class="toc-text"> 1.6：Mysql 常见的数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.6.1.</span> <span class="toc-text"> 数值类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.6.2.</span> <span class="toc-text"> 日期和时间类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.6.3.</span> <span class="toc-text"> 字符串类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.6.4.</span> <span class="toc-text"> MYSQL 整数类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql%E5%B0%8F%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.6.5.</span> <span class="toc-text"> MYSQL 小数类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.6.6.</span> <span class="toc-text"> MYSQL 字符串类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17mysql%E4%B8%BB%E9%94%AE"><span class="toc-number">3.7.</span> <span class="toc-text"> 1.7：Mysql 主键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql%E4%B8%BB%E9%94%AEprimary-key"><span class="toc-number">3.7.1.</span> <span class="toc-text"> MySQL 主键（PRIMARY KEY）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E5%8F%96%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%AD%97%E6%AE%B5"><span class="toc-number">3.7.2.</span> <span class="toc-text"> 选取设置主键约束的字段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-number">3.7.3.</span> <span class="toc-text"> 在创建表时设置主键约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E5%88%9B%E5%BB%BA%E8%A1%A8%E6%97%B6%E8%AE%BE%E7%BD%AE%E5%A4%8D%E5%90%88%E4%B8%BB%E9%94%AE"><span class="toc-number">3.7.4.</span> <span class="toc-text"> 在创建表时设置复合主键</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E4%BF%AE%E6%94%B9%E8%A1%A8%E6%97%B6%E6%B7%BB%E5%8A%A0%E4%B8%BB%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="toc-number">3.7.5.</span> <span class="toc-text"> 在修改表时添加主键约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9Funique-key"><span class="toc-number">3.7.6.</span> <span class="toc-text"> MySQL 唯一约束（UNIQUE KEY）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql%E6%9F%A5%E7%9C%8B%E8%A1%A8%E4%B8%AD%E7%9A%84%E7%BA%A6%E6%9D%9F"><span class="toc-number">3.7.7.</span> <span class="toc-text"> MySQL 查看表中的约束</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2sql%E4%B9%8B%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">4.</span> <span class="toc-text"> 2：SQL 之增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#21%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.</span> <span class="toc-text"> 2.1：添加数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E4%B8%BA%E8%A1%A8%E4%B8%AD%E6%89%80%E6%9C%89%E5%AD%97%E6%AE%B5%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.1.</span> <span class="toc-text"> ①：为表中所有字段添加数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%B8%BA%E8%A1%A8%E7%9A%84%E6%8C%87%E5%AE%9A%E5%AD%97%E6%AE%B5%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.2.</span> <span class="toc-text"> ②：为表的指定字段添加数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E5%90%8C%E6%97%B6%E6%B7%BB%E5%8A%A0%E5%A4%9A%E6%9D%A1%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.3.</span> <span class="toc-text"> ③：同时添加多条数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">4.2.</span> <span class="toc-text"> 2.2：删除数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E5%88%A0%E9%99%A4%E9%83%A8%E5%88%86%E6%95%B0%E6%8D%AE"><span class="toc-number">4.2.1.</span> <span class="toc-text"> ①：删除部分数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%88%A0%E9%99%A4%E5%85%A8%E9%83%A8%E6%95%B0%E6%8D%AE"><span class="toc-number">4.2.2.</span> <span class="toc-text"> ②：删除全部数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.</span> <span class="toc-text"> 2.3：修改数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1update-%E6%9B%B4%E6%96%B0%E9%83%A8%E5%88%86%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.1.</span> <span class="toc-text"> ①：UPDATE 更新部分数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2update-%E6%9B%B4%E6%96%B0%E5%85%A8%E9%83%A8%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.2.</span> <span class="toc-text"> ②：UPDATE 更新全部数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE"><span class="toc-number">4.4.</span> <span class="toc-text"> 2.4：查询数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.4.1.</span> <span class="toc-text"> ①：简单查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E6%8C%89%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.4.2.</span> <span class="toc-text"> ②：按条件查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">4.4.3.</span> <span class="toc-text"> ③：聚合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E5%AF%B9%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F-%E9%87%8D%E7%82%B9"><span class="toc-number">4.4.4.</span> <span class="toc-text"> ④：对查询结果进行排序  （重点）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%E4%B8%BA%E8%A1%A8%E5%92%8C%E5%AD%97%E6%AE%B5%E5%8F%96%E5%88%AB%E5%90%8D"><span class="toc-number">4.4.5.</span> <span class="toc-text"> ⑤：为表和字段取别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.4.6.</span> <span class="toc-text"> ⑥：子查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2union"><span class="toc-number">4.4.7.</span> <span class="toc-text"> ⑦：联合查询 (union)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8%E5%88%A9%E7%94%A8%E5%86%85%E7%BD%AE%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.4.8.</span> <span class="toc-text"> ⑧：利用内置表查询</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3mysql%E5%86%85%E7%BD%AE%E5%BA%93"><span class="toc-number">5.</span> <span class="toc-text"> 3：MySQL 内置库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4sql%E4%B8%ADtips"><span class="toc-number">6.</span> <span class="toc-text"> 4：SQL 中 tips</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41%E7%AC%A6%E5%8F%B7%E8%BF%90%E7%94%A8"><span class="toc-number">6.1.</span> <span class="toc-text"> 4.1：符号运用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42%E5%B8%B8%E7%94%A8%E6%B3%A8%E9%87%8A%E7%AC%A6"><span class="toc-number">6.2.</span> <span class="toc-text"> 4.2：常用注释符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43%E5%86%85%E8%81%94%E6%B3%A8%E9%87%8A"><span class="toc-number">6.3.</span> <span class="toc-text"> 4.3：内联注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#44%E5%B8%B8%E8%A7%81%E7%A9%BA%E6%A0%BC%E8%A1%A8%E7%A4%BA%E7%AC%A6%E5%8F%B7"><span class="toc-number">6.4.</span> <span class="toc-text"> 4.4：常见空格表示符号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E6%B3%A8%E5%85%A5%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84sql%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text"> 5：注入中常见的 sql 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#51rand%E5%87%BD%E6%95%B0-%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA0~1%E4%B9%8B%E9%97%B4%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-number">7.0.1.</span> <span class="toc-text"> 5.1：rand () 函数 &#x2F;&#x2F; 生成一个 0~1 之间的随机数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#52floor%E5%87%BD%E6%95%B0-%E5%90%91%E4%B8%8B%E5%8F%96%E6%95%B4"><span class="toc-number">7.0.2.</span> <span class="toc-text"> 5.2：floor () 函数 &#x2F;&#x2F; 向下取整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#53concat%E5%87%BD%E6%95%B0-%E5%B0%86%E7%AC%A6%E5%90%88%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%90%8C%E4%B8%80%E5%88%97%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E8%A1%8C%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%8B%BC%E6%8E%A5%E9%80%89%E6%8B%A9%E5%A5%BD%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">7.0.3.</span> <span class="toc-text"> 5.3：concat () 函数 &#x2F;&#x2F; 将符合条件的同一列中的不同行数据进行拼接，选择好数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#54concat_ws%E5%87%BD%E6%95%B0-%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%82%E6%95%B0%E6%98%AF%E5%85%B6%E5%AE%83%E5%8F%82%E6%95%B0%E7%9A%84%E5%88%86%E9%9A%94%E7%AC%A6-%E5%88%86%E9%9A%94%E7%AC%A6%E7%9A%84%E4%BD%8D%E7%BD%AE%E5%9C%A8%E8%BF%9E%E6%8E%A5%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%8B%E9%97%B4"><span class="toc-number">7.0.4.</span> <span class="toc-text"> 5.4：concat_ws () 函数 &#x2F;&#x2F; 第一个参数是其它参数的分隔符。分隔符的位置在连接的两个字符串之间。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#55group_concat"><span class="toc-number">7.0.5.</span> <span class="toc-text"> 5.5：group_concat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#56extractvalue%E5%87%BD%E6%95%B0-%E5%AF%B9xml%E6%96%87%E6%A1%A3%E8%BF%9B%E8%A1%8C%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%87%BD%E6%95%B0-%E8%AF%AD%E6%B3%95extractvalue%E7%9B%AE%E6%A0%87xml%E6%96%87%E6%A1%A3xml%E8%B7%AF%E5%BE%84"><span class="toc-number">7.0.6.</span> <span class="toc-text"> 5.6：extractvalue () 函数 &#x2F;&#x2F; 对 xml 文档进行查询的函数 语法：extractvalue (目标 xml 文档，xml 路径).</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#57sleep%E5%87%BD%E6%95%B0-%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E8%A1%8C%E5%BB%B6%E6%97%B6%E7%9A%84%E5%87%BD%E6%95%B0-%E8%AF%AD%E6%B3%95%E5%90%8E%E9%9D%A2%E7%9B%B4%E6%8E%A5%E8%B7%9F%E9%9C%80%E8%A6%81%E5%BB%B6%E6%97%B6%E7%9A%84%E6%97%B6%E9%97%B4%E5%8D%B3%E5%8F%AF%E9%BB%98%E8%AE%A4%E5%8D%95%E4%BD%8D%E4%B8%BAs"><span class="toc-number">7.0.7.</span> <span class="toc-text"> 5.7：sleep () 函数 &#x2F;&#x2F; 对数据库进行延时的函数 语法：后面直接跟需要延时的时间即可，默认单位为 s</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#58updatexml-%E8%AF%AD%E6%B3%95updatexml%E7%9B%AE%E6%A0%87xml%E6%96%87%E6%A1%A3xml%E8%B7%AF%E5%BE%84%E6%9B%B4%E6%96%B0%E7%9A%84%E5%86%85%E5%AE%B9"><span class="toc-number">7.0.8.</span> <span class="toc-text"> 5.8：updatexml () &#x2F;&#x2F; 语法 updatexml (目标 xml 文档，xml 路径，更新的内容)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#59exp%E5%87%BD%E6%95%B0-%E6%AD%A4%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9Ee%E8%87%AA%E7%84%B6%E5%AF%B9%E6%95%B0%E7%9A%84%E5%BA%95%E7%9A%84x%E6%AC%A1%E6%96%B9%E7%9A%84%E5%80%BC%E7%94%A8%E4%BA%8E%E5%B0%86e%E6%8F%90%E5%8D%87%E4%B8%BA%E6%8C%87%E5%AE%9A%E6%95%B0%E5%AD%97%E7%9A%84%E5%B9%82%E5%BD%93%E4%BC%A0%E9%80%92%E4%B8%80%E4%B8%AA%E5%A4%A7%E4%BA%8E709%E7%9A%84%E5%80%BC%E6%97%B6%E5%87%BD%E6%95%B0exp%E5%B0%B1%E4%BC%9A%E5%BC%95%E8%B5%B7%E4%B8%80%E4%B8%AA%E6%BA%A2%E5%87%BA%E9%94%99%E8%AF%AF"><span class="toc-number">7.0.9.</span> <span class="toc-text"> 5.9：exp () 函数 &#x2F;&#x2F; 此函数返回 e (自然对数的底) 的 X 次方的值，用于将 E 提升为指定数字的幂，当传递一个大于 709 的值时，函数 exp () 就会引起一个溢出错误。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#510length%E5%87%BD%E6%95%B0-%E8%BF%94%E5%9B%9E%E5%8F%82%E6%95%B0%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">7.0.10.</span> <span class="toc-text"> 5.10：length () 函数 &#x2F;&#x2F; 返回参数的长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#511substr%E5%87%BD%E6%95%B0-%E4%BB%8E%E5%AD%97%E7%AC%A6%E4%B8%B2-s-%E7%9A%84-start-%E4%BD%8D%E7%BD%AE%E6%88%AA%E5%8F%96%E9%95%BF%E5%BA%A6%E4%B8%BA-length-%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2select-substruser12"><span class="toc-number">7.0.11.</span> <span class="toc-text"> 5.11：substr () 函数 &#x2F;&#x2F; 从字符串 s 的 start 位置截取长度为 length 的子字符串，select substr (user (),1,2);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#512substring%E5%87%BD%E6%95%B0left-mid%E5%87%BD%E6%95%B0-%E5%90%8Csubstr"><span class="toc-number">7.0.12.</span> <span class="toc-text"> 5.12：substring () 函数，left () ,mid () 函数 &#x2F;&#x2F; 同 substr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#513ascii-ord%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E7%9A%84ascii%E7%A0%81-%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6%E7%9A%84ascii%E7%A0%81"><span class="toc-number">7.0.13.</span> <span class="toc-text"> 5.13：ascii ()、ord () 函数返回第一个字符的 ascii 码 &#x2F;&#x2F; 返回字符的 ascii 码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#514name_const%E5%87%BD%E6%95%B0-%E6%9E%84%E9%80%A0%E4%B8%80%E4%B8%AA%E4%B8%B4%E6%97%B6%E5%88%97%E5%88%97%E5%90%8D%E4%B8%BAxx%E5%80%BC%E4%B8%BAxx"><span class="toc-number">7.0.14.</span> <span class="toc-text"> 5.14：name_const () 函数 &#x2F;&#x2F; 构造一个临时列，列名为 xx, 值为 xx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#515strcmp%E5%87%BD%E6%95%B0-strcmp%E5%87%BD%E6%95%B0%E6%98%AFstring-compare%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83%E7%9A%84%E7%BC%A9%E5%86%99%E7%94%A8%E4%BA%8E%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B9%B6%E6%A0%B9%E6%8D%AE%E6%AF%94%E8%BE%83%E7%BB%93%E6%9E%9C%E8%BF%94%E5%9B%9E%E6%95%B4%E6%95%B0-%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F%E4%B8%BAstrcmpstr1str2%E8%8B%A5str1str2%E5%88%99%E8%BF%94%E5%9B%9E%E9%9B%B6%E8%8B%A5str1str2%E5%88%99%E8%BF%94%E5%9B%9E%E8%B4%9F%E6%95%B0%E8%8B%A5str1str2%E5%88%99%E8%BF%94%E5%9B%9E%E6%AD%A3%E6%95%B0"><span class="toc-number">7.0.15.</span> <span class="toc-text"> 5.15：strcmp () 函数 &#x2F;&#x2F;strcmp 函数是 string compare (字符串比较) 的缩写，用于比较两个字符串并根据比较结果返回整数。基本形式为 strcmp (str1,str2)，若 str1&#x3D;str2，则返回零；若 str1&lt;str2，则返回负数；若 str1&gt;str2，则返回正数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#516ifabc-%E5%A6%82%E6%9E%9Ca%E4%B8%BA%E7%9C%9F%E5%88%99%E8%BF%94%E5%9B%9Eb%E5%90%A6%E5%88%99%E8%BF%94%E5%9B%9Ec"><span class="toc-number">7.0.16.</span> <span class="toc-text"> 5.16：if (a,b,c) &#x2F;&#x2F; 如果 a 为真，则返回 b，否则返回 c</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#517benchmarkcountexpr-%E9%87%8D%E5%A4%8D%E8%AE%A1%E7%AE%97expr%E8%A1%A8%E8%BE%BE%E5%BC%8Fcount%E6%AC%A1"><span class="toc-number">7.0.17.</span> <span class="toc-text"> 5.17：BENCHMARK (count,expr) &#x2F;&#x2F; 重复计算 expr 表达式 count 次</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#518locate%E5%87%BD%E6%95%B0-locatesubstrstr%E8%BF%94%E5%9B%9Esubstr%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9C%A8str%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E4%BD%8D%E7%BD%AE%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E0"><span class="toc-number">7.0.18.</span> <span class="toc-text"> 5.18：locate () 函数 &#x2F;&#x2F;locate (substr,str) 返回 substr 字符串在 str 中出现的位置，没有返回 0</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#519position%E5%87%BD%E6%95%B0-positionsubstr-in-str%E8%BF%94%E5%9B%9Esubstr%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9C%A8str%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E4%BD%8D%E7%BD%AE%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E0"><span class="toc-number">7.0.19.</span> <span class="toc-text"> 5.19：position () 函数 &#x2F;&#x2F;position (substr in str) 返回 substr 字符串在 str 中出现的位置，没有返回 0</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#520instr%E5%87%BD%E6%95%B0-instrstrsubstr%E8%BF%94%E5%9B%9Esubstr%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9C%A8str%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E4%BD%8D%E7%BD%AE%E4%B8%8Elocate%E7%9B%B8%E5%90%8C%E5%8F%AA%E6%98%AF%E5%8F%82%E6%95%B0%E9%A1%BA%E5%BA%8F%E7%9B%B8%E5%8F%8D"><span class="toc-number">7.0.20.</span> <span class="toc-text"> 5.20：instr () 函数 &#x2F;&#x2F;instr (str,substr) 返回 substr 字符串在 str 中出现的位置，与 locate 相同，只是参数顺序相反</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#521hexunhex%E5%87%BD%E6%95%B0"><span class="toc-number">7.0.21.</span> <span class="toc-text"> 5.21：hex ()&amp;unhex () 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#522load_file%E5%87%BD%E6%95%B0"><span class="toc-number">7.0.22.</span> <span class="toc-text"> 5.22：load_file () 函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#523into-outfile%E5%87%BD%E6%95%B0"><span class="toc-number">7.0.23.</span> <span class="toc-text"> 5.23：into outfile () 函数</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="da xian"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">da xian</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">6</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/20/daxian%201.3/" title="第三天：HTTP通信基础">第三天：HTTP通信基础</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/19/daxian%201.1/" title="第一天：计算机组成">第一天：计算机组成</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/18/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/23/daxian%201.5/" title="第五天：MySQL语法">第五天：MySQL语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/19/daxian%201.2/" title="第二天：计算机网络">第二天：计算机网络</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2022/01/20/daxian%201.4/" title="第四天：WEB站点搭建">第四天：WEB站点搭建</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2022</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">da xian @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2022/01/23/daxian 1.5/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
